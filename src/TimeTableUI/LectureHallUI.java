@@ -5,6 +5,12 @@
  */
 package TimeTableUI;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author Harith
@@ -61,13 +67,10 @@ public class LectureHallUI extends javax.swing.JFrame {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "temporyId", "name", "email", "Contact Number", "Subject Venue"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
@@ -78,7 +81,7 @@ public class LectureHallUI extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1173, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 912, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -87,8 +90,8 @@ public class LectureHallUI extends javax.swing.JFrame {
                 .addGap(50, 50, 50)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 368, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -122,6 +125,51 @@ public class LectureHallUI extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+
+       
+        
+        //Database connection
+        try {
+            
+             System.out.println("Hello");
+
+            Class.forName("com.mysql.jdbc.Driver"); 
+            System.out.println("Hello");
+            Connection con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
+            //username is root password is mysql1234
+
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from visitinglecturer");
+            
+           
+            
+            while(rs.next()){
+                
+                System.out.println("Hello");
+            
+                String id = rs.getString("temporyId");
+                
+                String lecName = rs.getString("lecturerName");
+                
+                String email = rs.getString("email");
+                
+                String contact = String.valueOf(rs.getInt("contactNumber"));
+                
+                String subjectVenue = rs.getString("subjectVenue");
+                
+                
+                String tbData[] = {id, lecName, email, contact, subjectVenue};
+                   DefaultTableModel tblModel = (DefaultTableModel)jTable1.getModel();
+                   
+                   tblModel.addRow(tbData);
+            } 
+
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
