@@ -87,6 +87,7 @@ public class LectureHallUI extends javax.swing.JFrame {
                 "temporyId", "name", "email", "Contact Number", "Subject Venue"
             }
         ));
+        jTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(jTable1);
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer-with-screen.png"))); // NOI18N
@@ -154,7 +155,7 @@ public class LectureHallUI extends javax.swing.JFrame {
 
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Hello");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
             //username is root password is mysql1234
 
             Statement stmt = con.createStatement();
