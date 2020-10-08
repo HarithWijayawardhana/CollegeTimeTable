@@ -26,6 +26,10 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
 
+/**
+ *
+ * @author Isuru
+ */
 
 public class CreateTimeTable extends javax.swing.JFrame {
 
@@ -182,7 +186,7 @@ public class CreateTimeTable extends javax.swing.JFrame {
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 1240, 520));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 690));
 
         pack();
         setLocationRelativeTo(null);
