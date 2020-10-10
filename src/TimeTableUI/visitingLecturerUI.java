@@ -391,7 +391,7 @@ public class visitingLecturerUI extends javax.swing.JFrame {
 
     private void viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewMouseClicked
         // TODO add your handling code here:
-
+//start
         //Database connection
         try {
 
