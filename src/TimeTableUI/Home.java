@@ -85,6 +85,11 @@ public class Home extends javax.swing.JFrame {
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 120, 280, 420));
 
         jPanel3.setBackground(new java.awt.Color(204, 255, 255));
+        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jPanel3MouseClicked(evt);
+            }
+        });
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLabel3.setText("ADMIN");
@@ -163,6 +168,13 @@ public class Home extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+        // TODO add your handling code here:
+        AdminHome addmintab = new AdminHome();
+        addmintab.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jPanel3MouseClicked
 
     /**
      * @param args the command line arguments

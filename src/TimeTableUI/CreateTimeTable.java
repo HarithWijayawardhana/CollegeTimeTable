@@ -90,6 +90,8 @@ public class CreateTimeTable extends javax.swing.JFrame {
         jScrollPaneCTT = new javax.swing.JScrollPane();
         jTableCTT = new javax.swing.JTable();
         jComboBoxSaveBy = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        jLabelViewTimeTable = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setType(java.awt.Window.Type.UTILITY);
@@ -136,6 +138,11 @@ public class CreateTimeTable extends javax.swing.JFrame {
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1180, 10, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home_50px.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jPanel2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1240, 70));
@@ -171,7 +178,7 @@ public class CreateTimeTable extends javax.swing.JFrame {
         jTableCTT.setSelectionBackground(new java.awt.Color(0, 204, 204));
         jScrollPaneCTT.setViewportView(jTableCTT);
 
-        jPanel3.add(jScrollPaneCTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 1190, 370));
+        jPanel3.add(jScrollPaneCTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 80, 1020, 390));
 
         jComboBoxSaveBy.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBoxSaveBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Save by Lecturer", "Save by Batch", "Save by Lecture Hall" }));
@@ -184,7 +191,22 @@ public class CreateTimeTable extends javax.swing.JFrame {
         });
         jPanel3.add(jComboBoxSaveBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 20, 310, 30));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 1240, 520));
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add_schedule_100px.png"))); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, -1, -1));
+
+        jLabelViewTimeTable.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelViewTimeTable.setForeground(new java.awt.Color(62, 70, 205));
+        jLabelViewTimeTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/invisible_50px.png"))); // NOI18N
+        jLabelViewTimeTable.setText("VIEW TIME TABLE");
+        jLabelViewTimeTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelViewTimeTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelViewTimeTableViewTimeTableClicked(evt);
+            }
+        });
+        jPanel3.add(jLabelViewTimeTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 1240, 540));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1260, 690));
 
@@ -418,6 +440,19 @@ public class CreateTimeTable extends javax.swing.JFrame {
         tablemng.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        Home mainui = new Home();
+        mainui.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabelViewTimeTableViewTimeTableClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelViewTimeTableViewTimeTableClicked
+        ViewTimeTable viewTimeTable = new ViewTimeTable();
+        viewTimeTable.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabelViewTimeTableViewTimeTableClicked
  
     //Method to export time table to an excelsheet
     private void exportDataToExcel(String fileLocation) {        
@@ -506,9 +541,11 @@ public class CreateTimeTable extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxSaveBy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelClear;
     private javax.swing.JLabel jLabelCreateTimeTable;
     private javax.swing.JLabel jLabelSave;
+    private javax.swing.JLabel jLabelViewTimeTable;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;

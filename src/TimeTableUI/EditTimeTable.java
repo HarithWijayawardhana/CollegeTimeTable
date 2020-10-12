@@ -84,7 +84,6 @@ public class EditTimeTable extends javax.swing.JFrame {
         jScrollPaneETT = new javax.swing.JScrollPane();
         jTableETT = new javax.swing.JTable();
         jLabelClear = new javax.swing.JLabel();
-        jLabelViewTimeTable = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabelEditTimeTable = new javax.swing.JLabel();
@@ -96,6 +95,8 @@ public class EditTimeTable extends javax.swing.JFrame {
         jLabelSearchIcon = new javax.swing.JLabel();
         jLabelDelete = new javax.swing.JLabel();
         jLabelUpdate = new javax.swing.JLabel();
+        jLabelViewTimeTable = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -127,7 +128,7 @@ public class EditTimeTable extends javax.swing.JFrame {
         jTableETT.setSelectionBackground(new java.awt.Color(0, 204, 204));
         jScrollPaneETT.setViewportView(jTableETT);
 
-        getContentPane().add(jScrollPaneETT, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 240, 880, 370));
+        getContentPane().add(jScrollPaneETT, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 190, 990, 420));
 
         jLabelClear.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ClearTimeTable.png"))); // NOI18N
         jLabelClear.setToolTipText("Click to Clear All Table Contents");
@@ -138,17 +139,6 @@ public class EditTimeTable extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jLabelClear, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 620, -1, -1));
-
-        jLabelViewTimeTable.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabelViewTimeTable.setForeground(new java.awt.Color(62, 70, 205));
-        jLabelViewTimeTable.setText("VIEW TIME TABLE");
-        jLabelViewTimeTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelViewTimeTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                ViewTimeTableClicked(evt);
-            }
-        });
-        getContentPane().add(jLabelViewTimeTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(255, 184, 114));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -163,9 +153,19 @@ public class EditTimeTable extends javax.swing.JFrame {
         jPanel2.add(jLabelEditTimeTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 20, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home_50px.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, -1, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 1260, 80));
@@ -181,10 +181,10 @@ public class EditTimeTable extends javax.swing.JFrame {
                 jComboBoxSearchByActionPerformed(evt);
             }
         });
-        jPanel3.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, 240, 30));
+        jPanel3.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 240, 30));
 
         jComboBoxSearch.setToolTipText("Select Timetable ID");
-        jPanel3.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, 260, 30));
+        jPanel3.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 20, 260, 30));
 
         jLabelSearchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button (2).png"))); // NOI18N
         jLabelSearchIcon.setToolTipText("Click to Search Timetable");
@@ -194,7 +194,7 @@ public class EditTimeTable extends javax.swing.JFrame {
                 jLabelSearchIconMouseClicked(evt);
             }
         });
-        jPanel3.add(jLabelSearchIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 40, -1, -1));
+        jPanel3.add(jLabelSearchIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 20, -1, -1));
 
         jLabelDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/Delete.png"))); // NOI18N
         jLabelDelete.setToolTipText("Click to Delete Timetable");
@@ -215,6 +215,21 @@ public class EditTimeTable extends javax.swing.JFrame {
             }
         });
         jPanel3.add(jLabelUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(970, 500, -1, -1));
+
+        jLabelViewTimeTable.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabelViewTimeTable.setForeground(new java.awt.Color(62, 70, 205));
+        jLabelViewTimeTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/invisible_50px.png"))); // NOI18N
+        jLabelViewTimeTable.setText("VIEW TIME TABLE");
+        jLabelViewTimeTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabelViewTimeTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ViewTimeTableClicked(evt);
+            }
+        });
+        jPanel3.add(jLabelViewTimeTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit_schedule_100px.png"))); // NOI18N
+        jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, -1, -1));
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 1260, 570));
 
@@ -405,6 +420,20 @@ public class EditTimeTable extends javax.swing.JFrame {
     private void jComboBoxSearchByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSearchByActionPerformed
         populateJComboBoxSearch();
     }//GEN-LAST:event_jComboBoxSearchByActionPerformed
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+        ViewTimeTable timetableinfo = new ViewTimeTable();
+        timetableinfo.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        Home mainui = new Home();
+        mainui.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
    
     private void populateJComboBoxSearch() {
         try {
@@ -609,6 +638,7 @@ public class EditTimeTable extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxSearchBy;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabelClear;
     private javax.swing.JLabel jLabelDelete;
     private javax.swing.JLabel jLabelEditTimeTable;

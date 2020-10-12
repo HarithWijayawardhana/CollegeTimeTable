@@ -5,12 +5,19 @@
  */
 package TimeTableUI;
 
+import java.awt.MouseInfo;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
+import javax.swing.JPopupMenu;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -24,7 +31,13 @@ public class TimeTableManagement extends javax.swing.JFrame {
      */
     public TimeTableManagement() {
         initComponents();
+        createPopupMenu(this);
     }
+    
+    private final JPopupMenu popupMenu = new JPopupMenu();
+    private JMenuItem menuItem = null;
+    
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -54,6 +67,11 @@ public class TimeTableManagement extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 184, 114));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home_50px.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 255));
 
@@ -208,7 +226,76 @@ public class TimeTableManagement extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+     private void createPopupMenu(JFrame frame){
+       
+        
+        // Add Another Menu Item To Popup Menu
+        menuItem = new JMenuItem(
+                "Edit Record",
+                new ImageIcon("C:\\Users\\Isuru\\Desktop\\hci2\\images\\edit.png")
+        );
+        // Apply Desc
+        menuItem.getAccessibleContext().setAccessibleDescription("Edit Record");
+        // Add Action Listener
+        menuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "You have clicked on Edit Record");
+                 EditTimeTable update = new EditTimeTable();
+                 update.setVisible(true);
+                 this.setVisible(false);
+            }
+
+            private void setVisible(boolean b) {
+                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+            }
+
+           
+        });
+        // Add Menu Item Into Popup Menu
+        popupMenu.add(menuItem);
+        
+        // Add Delete Menu Item
+        menuItem = new JMenuItem(
+                "Delete Record",
+                new ImageIcon("C:\\Users\\Isuru\\Desktop\\hci2\\images\\delete.png")
+        );
+        // Apply Desc
+        menuItem.getAccessibleContext().setAccessibleDescription("Delete Record");
+        // Add Action Listener
+        menuItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(frame, "You have clicked on Delete Record");
+                  if(getRecord(jTable1) == 0){
+                    System.out.println(getRecord(jTable1) + " has been removed");
+                }else{
+                    System.out.println("Record ID: " + getRecord(jTable1) + " has been removed");
+                }
+            }
+
+           
+        });
+        // Add Menu Item Into Popup Menu
+        popupMenu.add(menuItem);
+    }
+     
+     private int getRecord(JTable table){
+        try{
+            int getRow = table.getSelectedRow();
+            int recordID = Integer.parseInt(table.getValueAt(getRow, 0).toString());
+            return recordID;
+        }catch (Exception exception){
+            System.out.println("Getting Row Error: " + exception.getMessage());
+            return 0;
+        }
+    }
+    
+    
+    
      int count = 2;
+     
      
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -278,9 +365,10 @@ public class TimeTableManagement extends javax.swing.JFrame {
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-        EditTimeTable timettable= new EditTimeTable();
-        timettable.setVisible(true);
-        this.setVisible(false);
+        int mPosX = MouseInfo.getPointerInfo().getLocation().x;
+        int mPosY = MouseInfo.getPointerInfo().getLocation().y;
+        // Show Popup Menu
+        popupMenu.show(this, mPosX, mPosY);
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
@@ -293,6 +381,13 @@ public class TimeTableManagement extends javax.swing.JFrame {
         createtable.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+        Home mainui = new Home();
+        mainui.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
 
     /**
      * @param args the command line arguments
