@@ -10,8 +10,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenuItem;
@@ -267,12 +271,32 @@ public class TimeTableManagement extends javax.swing.JFrame {
         menuItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "You have clicked on Delete Record");
-                  if(getRecord(jTable1) == 0){
-                    System.out.println(getRecord(jTable1) + " has been removed");
-                }else{
-                    System.out.println("Record ID: " + getRecord(jTable1) + " has been removed");
-                }
+               
+                if( (JOptionPane.showConfirmDialog(null,"Are you sure you want to delete this file?", "Delete confirmation", JOptionPane.YES_NO_OPTION)) == 0){
+            try{
+                int row = jTable1.getSelectedRow();
+                String cell = jTable1.getModel().getValueAt(row, 0).toString();
+                
+                System.out.println("Hello");
+
+                Class.forName("com.mysql.jdbc.Driver");
+                System.out.println("Hello");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
+                //username is root password is mysql1234
+
+                Statement stmt = con.createStatement();
+                ResultSet rs = stmt.executeQuery("DELETE from timetableinfo where Time_Table_ID = " + cell);
+
+                JOptionPane.showMessageDialog(null, "Successfully deleted");
+
+            
+
+
+            }catch(Exception exception)
+            {
+                JOptionPane.showMessageDialog(null, e);
+            }
+        }
             }
 
            
