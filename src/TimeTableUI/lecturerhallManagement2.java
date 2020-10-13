@@ -141,6 +141,11 @@ public class lecturerhallManagement2 extends javax.swing.JFrame {
                 mouseclickedinsert(evt);
             }
         });
+        insert.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                insertActionPerformed(evt);
+            }
+        });
 
         update.setBackground(new java.awt.Color(30, 130, 76));
         update.setForeground(new java.awt.Color(255, 255, 255));
@@ -615,6 +620,10 @@ public class lecturerhallManagement2 extends javax.swing.JFrame {
         building.setSelectedIndex(0);
         capacity.setText("");
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void insertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_insertActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_insertActionPerformed
 
     /**
      * @param args the command line arguments
