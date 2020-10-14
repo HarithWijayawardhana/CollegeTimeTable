@@ -5,36 +5,26 @@
  */
 package TimeTableUI;
 
-import java.awt.MouseInfo;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JPopupMenu;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Isuru
  */
-public class Time_Table_Info extends javax.swing.JFrame {
+public class LecturerView extends javax.swing.JFrame {
 
     /**
-     * Creates new form Time_Table_Info
+     * Creates new form LecturerView
      */
-    public Time_Table_Info() {
+    public LecturerView() {
         initComponents();
-        createPopupMenu(this);
     }
-    
-     private final JPopupMenu popupMenu = new JPopupMenu();
-    private JMenuItem menuItem = null;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,53 +36,48 @@ public class Time_Table_Info extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("           VIEW");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 590, 180, 50));
+        jScrollPane1.setBorder(null);
 
-        jTable1.setBackground(new java.awt.Color(240, 240, 240));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Time Table ID", "Time Table Name", "Subject", "Action"
+                "ID", "Name", "Gender", "Subject", "Email", "Contact Number"
             }
         ));
         jTable1.setRowHeight(40);
-        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTable1MouseClicked(evt);
-            }
-        });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 197, 700, 360));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 230, 700, 240));
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel2.setText("        VIEW");
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(742, 606, 160, 60));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 80, 60));
@@ -106,7 +91,7 @@ public class Time_Table_Info extends javax.swing.JFrame {
                 jLabel4MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -1, 440, 120));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 440, 120));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -127,6 +112,17 @@ public class Time_Table_Info extends javax.swing.JFrame {
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 90, 60));
 
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("                           INSERT");
+        jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel10MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 286, 400, 110));
+
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, 60));
 
@@ -140,17 +136,6 @@ public class Time_Table_Info extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 390, 100));
-
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("                           INSERT");
-        jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel10MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 286, 400, 110));
 
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, 60));
@@ -166,9 +151,8 @@ public class Time_Table_Info extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 546, 400, 110));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/time table management view.jpg"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 670));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer management view.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 710));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -184,137 +168,50 @@ public class Time_Table_Info extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-        private void createPopupMenu(JFrame frame){
-       
-        
-        // Add Another Menu Item To Popup Menu
-        menuItem = new JMenuItem(
-                "Edit Record",
-                new ImageIcon("C:\\Users\\Isuru\\Desktop\\hci2\\images\\edit.png")
-        );
-        // Apply Desc
-        menuItem.getAccessibleContext().setAccessibleDescription("Edit Record");
-        // Add Action Listener
-        menuItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(frame, "You have clicked on Edit Record");
-                 Edit_Time_Table update = new Edit_Time_Table();
-                 update.setVisible(true);
-                 this.setVisible(false);
-            }
-
-            private void setVisible(boolean b) {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-           
-        });
-        // Add Menu Item Into Popup Menu
-        popupMenu.add(menuItem);
-        
-        // Add Delete Menu Item
-        menuItem = new JMenuItem(
-                "Delete Record",
-                new ImageIcon("C:\\Users\\Isuru\\Desktop\\hci2\\images\\delete.png")
-        );
-        // Apply Desc
-        menuItem.getAccessibleContext().setAccessibleDescription("Delete Record");
-        // Add Action Listener
-        menuItem.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               
-                if( (JOptionPane.showConfirmDialog(null,"Are you sure you want to delete this file?", "Delete confirmation", JOptionPane.YES_NO_OPTION)) == 0){
-            try{
-                int row = jTable1.getSelectedRow();
-                String cell = jTable1.getModel().getValueAt(row, 0).toString();
-                
-                System.out.println("Hello");
-
-                Class.forName("com.mysql.jdbc.Driver");
-                System.out.println("Hello");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
-                //username is root password is mysql1234
-
-                Statement stmt = con.createStatement();
-                ResultSet rs = stmt.executeQuery("DELETE from timetableinfo where Time_Table_ID = " + cell);
-
-                JOptionPane.showMessageDialog(null, "Successfully deleted");
-
-            
-
-
-            }catch(Exception exception)
-            {
-                JOptionPane.showMessageDialog(null, e);
-            }
-        }
-            }
-
-           
-        });
-        // Add Menu Item Into Popup Menu
-        popupMenu.add(menuItem);
-    }
-    
-    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
         // TODO add your handling code here:
-        int mPosX = MouseInfo.getPointerInfo().getLocation().x;
-        int mPosY = MouseInfo.getPointerInfo().getLocation().y;
-        // Show Popup Menu
-        popupMenu.show(this, mPosX, mPosY);
-    }//GEN-LAST:event_jTable1MouseClicked
-
-    int count = 2;
-    
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        // TODO add your handling code here:
+               int count = 2;
         
-           try {
-
-            System.out.println("Hello");
+                //Database connection
+        try {
 
             Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("Hello");
+
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
             //username is root password is mysql1234
 
+            System.out.println("Database connected");
+
             Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from timetableinfo");
+            ResultSet rs = stmt.executeQuery("select * from lecturerinfo");
 
-            
-            
             while (rs.next()) {
+
+                count = count + 1;
+
+                String L_ID = rs.getString("L_ID");
+
+                String Name = rs.getString("Name");
+
+                String Gender = rs.getString("Gender");
+
+                String ContactNo  = String.valueOf(rs.getInt("ContactNo"));
+
+                String Email = rs.getString("Email");
                 
-             
-              count = count + 1;
+                String Subject = rs.getString("Subject");
 
-                System.out.println("Hello");
-
-                String id = rs.getString("Time_Table_ID");
-
-                String Name = rs.getString("Time_Table_Name");
-
-                String subject = rs.getString("Subject");
-
-                String action = String.valueOf(rs.getInt("Action"));
-
-                
-                
-                
-
-                String tbData[] = {id, Name, subject, action};
+                String tbData[] = {L_ID, Name, Gender, ContactNo,Email,Subject};
                 DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
 
-                if (tblModel.getRowCount() == tbData.length - (-1) ) {
+                if (tblModel.getRowCount() == tbData.length ) {
 
                     System.out.println("error");
                     String message = "\"All information are viewed\"\n";
-                         
+
                     JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
-                            JOptionPane.ERROR_MESSAGE);
-                    
+                        JOptionPane.ERROR_MESSAGE);
+
                     return;
 
                 } else {
@@ -329,14 +226,22 @@ public class Time_Table_Info extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-    }//GEN-LAST:event_jLabel1MouseClicked
+        
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+        AdminHome tablehome = new AdminHome();
+        tablehome .setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-          View_Time_Table view = new View_Time_Table();
-          view.setVisible(true);
-          this.setVisible(false);
-        
+        View_Time_Table view = new View_Time_Table();
+        view.setVisible(true);
+        this.setVisible(false);
+
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
@@ -355,17 +260,10 @@ public class Time_Table_Info extends javax.swing.JFrame {
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-         Time_Table_Report report = new Time_Table_Report();
+        Time_Table_Report report = new Time_Table_Report();
         report.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel12MouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-         AdminHome tablehome = new AdminHome();
-        tablehome .setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel4MouseClicked
 
     /**
      * @param args the command line arguments
@@ -384,21 +282,20 @@ public class Time_Table_Info extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Time_Table_Info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LecturerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Time_Table_Info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LecturerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Time_Table_Info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LecturerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Time_Table_Info.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(LecturerView.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Time_Table_Info().setVisible(true);
+                new LecturerView().setVisible(true);
             }
         });
     }

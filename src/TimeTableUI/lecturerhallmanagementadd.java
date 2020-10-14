@@ -195,7 +195,7 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         // TODO add your handling code here:
           try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/collegetimetable?" + "user=root&password=Kushan@321");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=Kushan@321");
 
             String sql = "insert into lecturerhallmanagement values(?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
