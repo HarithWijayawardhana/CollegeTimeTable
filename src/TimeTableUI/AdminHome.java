@@ -225,8 +225,8 @@ public class AdminHome extends javax.swing.JFrame {
 
     private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
         // TODO add your handling code here:
-        TimeTableManagement admintable = new TimeTableManagement();
-        admintable.setVisible(true);
+        Time_Table_Info info = new Time_Table_Info();
+        info.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jPanel3MouseClicked
 

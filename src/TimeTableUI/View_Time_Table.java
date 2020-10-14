@@ -29,14 +29,15 @@ import org.jdesktop.swingx.autocomplete.AutoCompleteDecorator;
  *
  * @author Isuru
  */
-public class ViewTimeTable extends javax.swing.JFrame {
+public class View_Time_Table extends javax.swing.JFrame {
 
     /**
-     * Creates new form ViewTimeTable
+     * Creates new form View_Time_Table
      */
-    public ViewTimeTable() {
+    public View_Time_Table() {
         initComponents();
-        jComboBoxSearchBy.setBackground(new Color(240, 240, 240, 50));
+        
+          jComboBoxSearchBy.setBackground(new Color(240, 240, 240, 50));
            setSampleData();
         
         //Setting MultiLineTableCellRenderer for each column
@@ -67,6 +68,24 @@ public class ViewTimeTable extends javax.swing.JFrame {
         AutoCompleteDecorator.decorate(jComboBoxSearch);
         populateJComboBoxSearch();
     }
+    
+     private void setSampleData()
+    {           
+      
+        
+        model = (DefaultTableModel) jTableVTT.getModel();
+        String[] cols = {"Time Slots","Monday","Tuesday","Wednesday", "Thursday", "Friday"};
+        String[][] data = { 
+                            {"8.30 - 10.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
+                            {"10.30 - 12.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
+                            {"12.30 - 1.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
+                            {"1.30 - 3.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
+                            {"3.30 - 5.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
+                          };
+        
+        model.setDataVector(data, cols);
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -77,66 +96,100 @@ public class ViewTimeTable extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabelViewTimeTable = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabelSearchIcon = new javax.swing.JLabel();
-        jComboBoxSearch = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jComboBoxSearchBy = new javax.swing.JComboBox<>();
+        jComboBoxSearch = new javax.swing.JComboBox<>();
+        jLabel2 = new javax.swing.JLabel();
         jScrollPaneVTT = new javax.swing.JScrollPane();
         jTableVTT = new javax.swing.JTable();
-        jPanel3 = new javax.swing.JPanel();
-        jLabelEditTimeTable = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setType(java.awt.Window.Type.UTILITY);
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(255, 184, 114));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 80, 60));
 
-        jLabelViewTimeTable.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabelViewTimeTable.setForeground(new java.awt.Color(62, 70, 205));
-        jLabelViewTimeTable.setText("VIEW TIME TABLE");
-        jLabelViewTimeTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabelViewTimeTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 20, -1, -1));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
-        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("                          HOME");
+        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel2MouseClicked(evt);
+                jLabel4MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1200, 10, -1, -1));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -1, 440, 120));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home_50px.png"))); // NOI18N
-        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, 80));
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("                            VIEW");
+        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel3MouseClicked(evt);
+                jLabel6MouseClicked(evt);
             }
         });
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 156, 400, 110));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 1260, 70));
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 90, 60));
 
-        jLabelSearchIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/button (2).png"))); // NOI18N
-        jLabelSearchIcon.setToolTipText("Click to Search Timetable");
-        jLabelSearchIcon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelSearchIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("                           INSERT");
+        jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel10.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelSearchIconMouseClicked(evt);
+                jLabel10MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabelSearchIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 160, -1, -1));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(21, 286, 400, 110));
 
-        jComboBoxSearch.setToolTipText("Select Timetable ID");
-        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 160, 260, 30));
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, -1, 60));
 
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("                            EDIT");
+        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 420, 390, 100));
+
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, 60));
+
+        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel12.setText("             REPORT GENARATION");
+        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel12MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 546, 400, 110));
+
+        jComboBoxSearchBy.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBoxSearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Search by Lecturer", "Search by Batch", "Search by Lecture Hall" }));
         jComboBoxSearchBy.setToolTipText("Type of Timetable to be Searched");
         jComboBoxSearchBy.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -145,7 +198,18 @@ public class ViewTimeTable extends javax.swing.JFrame {
                 jComboBoxSearchByActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 240, 30));
+        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 200, 20));
+
+        jComboBoxSearch.setToolTipText("Select Timetable ID");
+        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 150, 200, 20));
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 130, 60, 60));
 
         jTableVTT.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTableVTT.setModel(new javax.swing.table.DefaultTableModel(
@@ -171,53 +235,32 @@ public class ViewTimeTable extends javax.swing.JFrame {
         jTableVTT.setSelectionBackground(new java.awt.Color(0, 204, 204));
         jScrollPaneVTT.setViewportView(jTableVTT);
 
-        jPanel1.add(jScrollPaneVTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 970, 420));
+        jPanel1.add(jScrollPaneVTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 730, 410));
 
-        jPanel3.setBackground(new java.awt.Color(204, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/time table management view table.jpg"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
 
-        jLabelEditTimeTable.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
-        jLabelEditTimeTable.setForeground(new java.awt.Color(62, 70, 205));
-        jLabelEditTimeTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/table_properties_60px.png"))); // NOI18N
-        jLabelEditTimeTable.setText("EDIT TIME TABLE");
-        jLabelEditTimeTable.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabelEditTimeTable.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabelEditTimeTableMouseClicked(evt);
-            }
-        });
-        jPanel3.add(jLabelEditTimeTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_schedule_100px.png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 220, -1, -1));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 1260, 550));
-
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 720));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jComboBoxSearchByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSearchByActionPerformed
+        populateJComboBoxSearch();
+    }//GEN-LAST:event_jComboBoxSearchByActionPerformed
 
-     private void setSampleData()
-    {           
-      
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
         
-        model = (DefaultTableModel) jTableVTT.getModel();
-        String[] cols = {"Time Slots","Monday","Tuesday","Wednesday", "Thursday", "Friday"};
-        String[][] data = { 
-                            {"8.30 - 10.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
-                            {"10.30 - 12.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
-                            {"12.30 - 1.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
-                            {"1.30 - 3.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
-                            {"3.30 - 5.30", "Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502","Human Computer Interface\nDr. Antoni Liang\nB502"},
-                          };
-        
-        model.setDataVector(data, cols);
-    }
-    
-    private void jLabelSearchIconMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelSearchIconMouseClicked
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Hello");
@@ -270,34 +313,44 @@ public class ViewTimeTable extends javax.swing.JFrame {
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
         }
-    }//GEN-LAST:event_jLabelSearchIconMouseClicked
-
-    private void jComboBoxSearchByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSearchByActionPerformed
-        populateJComboBoxSearch();
-    }//GEN-LAST:event_jComboBoxSearchByActionPerformed
-
-    private void jLabelEditTimeTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelEditTimeTableMouseClicked
-        // TODO add your handling code here:
-        EditTimeTable update = new EditTimeTable();
-        update.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabelEditTimeTableMouseClicked
-
-    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
-        // TODO add your handling code here:
-        TimeTableManagement viewinfo = new TimeTableManagement();
-        viewinfo.setVisible(true);
-        this.setVisible(false);
     }//GEN-LAST:event_jLabel2MouseClicked
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
         // TODO add your handling code here:
-        Home mainui = new Home();
-        mainui.setVisible(true);
+        View_Time_Table view = new View_Time_Table();
+          view.setVisible(true);
+          this.setVisible(false);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        // TODO add your handling code here:
+        Create_Time_Table create = new Create_Time_Table();
+        create.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jLabel3MouseClicked
-    
-    private void populateJComboBoxSearch() {
+    }//GEN-LAST:event_jLabel10MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+         Edit_Time_Table update = new Edit_Time_Table();
+        update.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
+        // TODO add your handling code here:
+        Time_Table_Report report = new Time_Table_Report();
+        report.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel12MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+         AdminHome tablehome = new AdminHome();
+        tablehome .setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+      private void populateJComboBoxSearch() {
         try {
            Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Hello");
@@ -421,27 +474,26 @@ public class ViewTimeTable extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Windows".equals(info.getName())) {
+                if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ViewTimeTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Time_Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ViewTimeTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Time_Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ViewTimeTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Time_Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ViewTimeTable.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(View_Time_Table.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                ViewTimeTable viewTimeTable = new ViewTimeTable();
+                View_Time_Table viewTimeTable = new View_Time_Table();
                 viewTimeTable.setSize(800, 400);
                 viewTimeTable.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                 viewTimeTable.show();
@@ -454,16 +506,19 @@ public class ViewTimeTable extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBoxSearch;
     private javax.swing.JComboBox<String> jComboBoxSearchBy;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabelEditTimeTable;
-    private javax.swing.JLabel jLabelSearchIcon;
-    private javax.swing.JLabel jLabelViewTimeTable;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPaneVTT;
     private javax.swing.JTable jTableVTT;
     // End of variables declaration//GEN-END:variables
-
 }
