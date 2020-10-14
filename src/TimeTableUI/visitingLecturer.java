@@ -19,6 +19,8 @@ import javax.swing.table.DefaultTableModel;
  */
 public class visitingLecturer extends javax.swing.JFrame {
 
+    
+    //test
     /**
      * Creates new form visitingLecturer
      */
@@ -187,8 +189,11 @@ public class visitingLecturer extends javax.swing.JFrame {
 
                 String tbData[] = {id, lecName, email, contact, subjectVenue};
                 DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+                
+                
+                
 
-                if (tblModel.getRowCount() == tbData.length - 2) {
+                if (tblModel.getRowCount() == tbData.length) {
 
                     System.out.println("error");
                     String message = "\"All information are viewed\"\n";

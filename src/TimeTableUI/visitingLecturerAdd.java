@@ -5,6 +5,13 @@
  */
 package TimeTableUI;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.regex.Pattern;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Harith
@@ -30,7 +37,7 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
+        addButton = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         viewLecturer = new javax.swing.JLabel();
@@ -40,6 +47,11 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        txtSubjectVenue = new javax.swing.JComboBox<>();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -55,10 +67,15 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 350, 120));
 
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel4.setText("             ADD");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 610, 170, 40));
+        addButton.setBackground(new java.awt.Color(0, 0, 0));
+        addButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        addButton.setText("             ADD");
+        addButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addButtonMouseClicked(evt);
+            }
+        });
+        jPanel2.add(addButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 610, 170, 40));
 
         jLabel5.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,6 +124,24 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
         jLabel13.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 410, 110));
 
+        txtSubjectVenue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A01", "B01", "NB3", "A02" }));
+        txtSubjectVenue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSubjectVenueActionPerformed(evt);
+            }
+        });
+        jPanel2.add(txtSubjectVenue, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 540, -1));
+        jPanel2.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 540, 30));
+
+        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField2ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 540, 30));
+        jPanel2.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 350, 540, 30));
+        jPanel2.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 432, 540, 30));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visiting lecturer management ADD.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
@@ -127,13 +162,97 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
 
     private void viewLecturerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLecturerMouseClicked
         // TODO add your handling code here:
-        
+
         visitingLecturer v = new visitingLecturer();
-        
+
         v.setVisible(true);
         this.setVisible(false);
-        
+
     }//GEN-LAST:event_viewLecturerMouseClicked
+
+    private void txtSubjectVenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSubjectVenueActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSubjectVenueActionPerformed
+
+    private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
+        // TODO add your handling code here:
+
+        try {
+            DBconnect db = new DBconnect();
+            Connection conn = db.getConnection();
+
+            String sql2 = "select * from visitinglecturer where temporyId = ?";
+
+            PreparedStatement pst = conn.prepareStatement(sql2);
+
+            pst.setString(1, jTextField1.getText());
+
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                JOptionPane.showMessageDialog(null, "A lecturer with this lecture ID already exists", "Errors", JOptionPane.ERROR_MESSAGE);
+            }
+
+            if (jTextField1.getText().isEmpty() && jTextField2.getText().isEmpty() && jTextField3.getText().isEmpty() && jTextField4.getText().isEmpty() || txtSubjectVenue.getSelectedIndex() == -1) {
+                JOptionPane.showMessageDialog(null, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
+            } else
+            if (jTextField1.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter a Temporery ID", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (jTextField2.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter a Name", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (jTextField3.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter a Email", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (jTextField4.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(null, "Please enter a parent's name", "Error", JOptionPane.ERROR_MESSAGE);
+            } else if (txtSubjectVenue.getSelectedIndex() == -1) {
+                JOptionPane.showMessageDialog(null, "Please enter a parent's name", "Error", JOptionPane.ERROR_MESSAGE);
+            } //            else if (txtTel.getText().length() < 10 || txtTel.getText().length() > 10) {
+            //                String msg = "Please enter a contact number with 10 digits. \nYou have entered '" + txtTel.getText().length() + "' numbers";
+            //                JOptionPane.showMessageDialog(null, msg, "Error", JOptionPane.ERROR_MESSAGE);
+            //            } else if (rbtnMale.isSelected() == false && rbtnFemale.isSelected() == false) {
+            //                JOptionPane.showMessageDialog(null, "Please select a gender", "Error", JOptionPane.ERROR_MESSAGE);
+            //            } else if (txtEmail.getText().isEmpty()) {
+            //                JOptionPane.showMessageDialog(null, "Please enter an email", "Error", JOptionPane.ERROR_MESSAGE);
+            //            } else if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", txtEmail.getText()))) {
+            //                JOptionPane.showMessageDialog(null, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
+            //            } 
+            else {
+
+                String query = "insert into visitinglecturer(temporyId, lecturerName, email, contactNumber, subjectVenue) values(?,?,?,?,?)";
+
+                pst = conn.prepareStatement(query);
+
+                pst.setString(1, jTextField1.getText());
+                pst.setString(2, jTextField2.getText());
+                pst.setString(3, jTextField3.getText());
+                pst.setString(4, jTextField4.getText());
+
+//                if (rbtnMale.isSelected()) {
+//                    pst.setString(4, "Male");
+//                } else if (rbtnFemale.isSelected()) {
+//                    pst.setString(4, "Female");
+//                }
+                pst.setString(5, txtSubjectVenue.getSelectedItem().toString());
+//                pst.setString(6, txtEmail.getText());
+//                pst.setString(7, cmbPosition.getSelectedItem().toString());
+
+//                pst.executeUpdate();
+
+                JOptionPane.showMessageDialog(null, "Successfully saved");
+            }
+        } catch (SQLException ex) {
+            //JOptionPane.showMessageDialog(null, ex);
+            System.out.println(ex.getMessage());
+        } catch (Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+
+
+    }//GEN-LAST:event_addButtonMouseClicked
+
+    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,6 +290,7 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel addButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -178,12 +298,16 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JComboBox<String> txtSubjectVenue;
     private javax.swing.JLabel viewLecturer;
     // End of variables declaration//GEN-END:variables
 }

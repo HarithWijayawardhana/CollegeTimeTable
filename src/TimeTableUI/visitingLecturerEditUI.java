@@ -49,7 +49,7 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
+        updateLabel = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         sVenue = new javax.swing.JTextField();
         cNumber = new javax.swing.JTextField();
@@ -119,15 +119,15 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 620, 180, 50));
 
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("          UPDATE");
-        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+        updateLabel.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        updateLabel.setForeground(new java.awt.Color(255, 255, 255));
+        updateLabel.setText("          UPDATE");
+        updateLabel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel13MouseClicked(evt);
+                updateLabelMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 625, 170, 40));
+        jPanel1.add(updateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 625, 170, 40));
 
         jLabel14.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
@@ -277,10 +277,10 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+    private void updateLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateLabelMouseClicked
         // TODO add your handling code here:
-        
-                try {
+
+        try {
 
             System.out.println("Hello");
 
@@ -318,9 +318,9 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
-        
-        
-    }//GEN-LAST:event_jLabel13MouseClicked
+
+
+    }//GEN-LAST:event_updateLabelMouseClicked
 
     /**
      * @param args the command line arguments
@@ -364,7 +364,6 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -381,5 +380,6 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
     private javax.swing.JTextField nm;
     private javax.swing.JTextField sVenue;
     private javax.swing.JTextField tempId;
+    private javax.swing.JLabel updateLabel;
     // End of variables declaration//GEN-END:variables
 }
