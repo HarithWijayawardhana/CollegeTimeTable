@@ -34,8 +34,10 @@ public class AdminHome extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,12 +45,26 @@ public class AdminHome extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/landing page select.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 590, 320, 80));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer_1.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton1MouseReleased(evt);
+            }
+        });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 240, 290));
 
-        jButton2.setBackground(new java.awt.Color(0, 255, 0));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/landing page square admin.jpg"))); // NOI18N
-        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vlec.png"))); // NOI18N
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton2MouseEntered(evt);
@@ -56,16 +72,57 @@ public class AdminHome extends javax.swing.JFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 jButton2MouseExited(evt);
             }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton2MouseReleased(evt);
+            }
         });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 210, 340, 380));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 240, 290));
+
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lechall.png"))); // NOI18N
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton3MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton3MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton3MouseReleased(evt);
+            }
+        });
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 250, 240, 290));
+
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/timetbe.png"))); // NOI18N
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton4MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton4MouseExited(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jButton4MouseReleased(evt);
+            }
+        });
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 240, 290));
 
         jLabel1.setBackground(new java.awt.Color(0, 51, 102));
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/landingpage.jpg"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/admin dashbrd.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, -1));
 
@@ -83,20 +140,90 @@ public class AdminHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        // TODO add your handling code here:
+        jButton1.setBackground(new Color(255,63,0));
+        
+        
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseReleased
+        // TODO add your handling code here:
+ 
+    }//GEN-LAST:event_jButton1MouseReleased
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
         // TODO add your handling code here:
         
-    }//GEN-LAST:event_jButton2ActionPerformed
+         jButton1.setBackground(new Color(0,0,12));
+        
+    }//GEN-LAST:event_jButton1MouseExited
 
     private void jButton2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseEntered
         // TODO add your handling code here:
-        jButton2.setBackground(Color.red);
+        
+        jButton2.setBackground(new Color(255,63,0));
+        
     }//GEN-LAST:event_jButton2MouseEntered
 
     private void jButton2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseExited
         // TODO add your handling code here:
-        jButton2.setBackground(Color.green);
+        jButton2.setBackground(new Color(0,0,12));
     }//GEN-LAST:event_jButton2MouseExited
+
+    private void jButton2MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2MouseReleased
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseEntered
+        // TODO add your handling code here:
+        
+        jButton3.setBackground(new Color(255,63,0));
+        
+        
+    }//GEN-LAST:event_jButton3MouseEntered
+
+    private void jButton3MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseExited
+        // TODO add your handling code here:
+        jButton3.setBackground(new Color(0,0,12));
+    }//GEN-LAST:event_jButton3MouseExited
+
+    private void jButton3MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3MouseReleased
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseEntered
+        // TODO add your handling code here:
+        
+        jButton4.setBackground(new Color(255,63,0));
+        
+    }//GEN-LAST:event_jButton4MouseEntered
+
+    private void jButton4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseExited
+        // TODO add your handling code here:
+         jButton4.setBackground(new Color(0,0,12));
+    }//GEN-LAST:event_jButton4MouseExited
+
+    private void jButton4MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseReleased
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jButton4MouseReleased
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -135,9 +262,11 @@ public class AdminHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
