@@ -52,12 +52,6 @@ public class visitingLecturerUI extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         editPanel_centre = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel12 = new javax.swing.JLabel();
-        jPanel8 = new javax.swing.JPanel();
-        jLabel14 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
         editPanel = new javax.swing.JPanel();
         tempId = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
@@ -72,13 +66,14 @@ public class visitingLecturerUI extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         updateButton = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(153, 51, 0));
 
         jPanel3.setBackground(new java.awt.Color(0, 102, 102));
 
-        jPanel2.setBackground(new java.awt.Color(0, 153, 102));
+        jPanel2.setBackground(new java.awt.Color(0, 51, 204));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 40)); // NOI18N
@@ -102,17 +97,17 @@ public class visitingLecturerUI extends javax.swing.JFrame {
             .addGroup(viewLayout.createSequentialGroup()
                 .addGap(55, 55, 55)
                 .addComponent(jLabel3)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         viewLayout.setVerticalGroup(
             viewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(viewLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        jPanel2.add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 40, 160, 50));
+        jPanel2.add(view, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 40, 160, 50));
 
         editButton.setBackground(new java.awt.Color(255, 204, 0));
         editButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -142,7 +137,7 @@ public class visitingLecturerUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 40, 150, 50));
+        jPanel2.add(editButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1050, 40, 150, 50));
 
         jPanel6.setBackground(new java.awt.Color(51, 255, 51));
 
@@ -166,7 +161,7 @@ public class visitingLecturerUI extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 40, 140, 50));
+        jPanel2.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 40, 140, 50));
 
         jTable1.setBackground(new java.awt.Color(255, 255, 153));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -186,92 +181,17 @@ public class visitingLecturerUI extends javax.swing.JFrame {
 
         editPanel_centre.setLayout(new java.awt.CardLayout());
 
-        jPanel5.setBackground(new java.awt.Color(0, 153, 102));
-
-        jPanel4.setBackground(new java.awt.Color(204, 255, 204));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel12.setText("Home");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addGap(159, 159, 159))
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addContainerGap(24, Short.MAX_VALUE)
-                .addComponent(jLabel12)
-                .addGap(22, 22, 22))
-        );
-
-        jPanel8.setBackground(new java.awt.Color(204, 255, 204));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel14.setText("Time Table Management");
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(65, 65, 65))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jLabel14)
-                .addGap(21, 21, 21))
-        );
-
-        jPanel9.setBackground(new java.awt.Color(204, 255, 204));
-
-        jLabel15.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel15.setText("Lecture Hall Management");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(85, Short.MAX_VALUE)
-                .addComponent(jLabel15)
-                .addGap(71, 71, 71))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
-                .addComponent(jLabel15)
-                .addContainerGap(23, Short.MAX_VALUE))
-        );
+        jPanel5.setBackground(new java.awt.Color(0, 51, 204));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel8, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGap(0, 276, Short.MAX_VALUE)
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(182, Short.MAX_VALUE))
+            .addGap(0, 433, Short.MAX_VALUE)
         );
 
         editPanel_centre.add(jPanel5, "card3");
@@ -342,7 +262,7 @@ public class visitingLecturerUI extends javax.swing.JFrame {
                     .addComponent(jLabel7)
                     .addComponent(jLabel8)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 114, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tempId, javax.swing.GroupLayout.DEFAULT_SIZE, 129, Short.MAX_VALUE)
                     .addComponent(nm)
@@ -384,12 +304,25 @@ public class visitingLecturerUI extends javax.swing.JFrame {
                 .addGroup(editPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(sVenue, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 63, Short.MAX_VALUE)
                 .addComponent(updateButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
 
         editPanel_centre.add(editPanel, "card2");
+
+        jPanel7.setBackground(new java.awt.Color(0, 51, 204));
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -399,22 +332,26 @@ public class visitingLecturerUI extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 814, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(editPanel_centre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(10, 10, 10)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 585, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(editPanel_centre, javax.swing.GroupLayout.PREFERRED_SIZE, 276, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 1210, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(50, 50, 50)
+                .addGap(38, 38, 38)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(editPanel_centre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jScrollPane1)
-                    .addComponent(editPanel_centre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(223, Short.MAX_VALUE))
+                    .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -438,11 +375,13 @@ public class visitingLecturerUI extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 742, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -469,65 +408,6 @@ public class visitingLecturerUI extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jTable1MouseClicked
-
-    private void viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewMouseClicked
-        // TODO add your handling code here:
-//start
-        //Database connection
-        try {
-
-            Class.forName("com.mysql.jdbc.Driver");
-
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
-            //username is root password is mysql1234
-
-            System.out.println("Database connected");
-
-            Statement stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("select * from visitinglecturer");
-
-            while (rs.next()) {
-
-                count = count + 1;
-
-                String id = rs.getString("temporyId");
-
-                String lecName = rs.getString("lecturerName");
-
-                String email = rs.getString("email");
-
-                String contact = String.valueOf(rs.getInt("contactNumber"));
-
-                String subjectVenue = rs.getString("subjectVenue");
-
-                String tbData[] = {id, lecName, email, contact, subjectVenue};
-                DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-
-                if (tblModel.getRowCount() == tbData.length - 2) {
-
-                    System.out.println("error");
-                    String message = "\"All information are viewed\"\n";
-
-                    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
-                            JOptionPane.ERROR_MESSAGE);
-
-                    return;
-
-                } else {
-                    tblModel.addRow(tbData);
-
-                }
-
-            }
-
-            con.close();
-
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-
-
-    }//GEN-LAST:event_viewMouseClicked
 
     private void editButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editButtonMouseClicked
         // TODO add your handling code here:
@@ -590,6 +470,64 @@ public class visitingLecturerUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_updateButtonMouseClicked
 
+    private void viewMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewMouseClicked
+        // TODO add your handling code here:
+        //start
+        //Database connection
+        try {
+
+            Class.forName("com.mysql.jdbc.Driver");
+
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
+            //username is root password is mysql1234
+
+            System.out.println("Database connected");
+
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select * from visitinglecturer");
+
+            while (rs.next()) {
+
+                count = count + 1;
+
+                String id = rs.getString("temporyId");
+
+                String lecName = rs.getString("lecturerName");
+
+                String email = rs.getString("email");
+
+                String contact = String.valueOf(rs.getInt("contactNumber"));
+
+                String subjectVenue = rs.getString("subjectVenue");
+
+                String tbData[] = {id, lecName, email, contact, subjectVenue};
+                DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+
+                if (tblModel.getRowCount() == tbData.length - 2) {
+
+                    System.out.println("error");
+                    String message = "\"All information are viewed\"\n";
+
+                    JOptionPane.showMessageDialog(new JFrame(), message, "Dialog",
+                        JOptionPane.ERROR_MESSAGE);
+
+                    return;
+
+                } else {
+                    tblModel.addRow(tbData);
+
+                }
+
+            }
+
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+    }//GEN-LAST:event_viewMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -634,9 +572,6 @@ public class visitingLecturerUI extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -648,11 +583,9 @@ public class visitingLecturerUI extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField mail;
