@@ -225,6 +225,12 @@ public class Edit_Time_Table extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel2MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel2MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel2MouseExited(evt);
+            }
         });
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 590, 170, 60));
 
@@ -501,6 +507,16 @@ public class Edit_Time_Table extends javax.swing.JFrame {
         tablehome .setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel2MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseEntered
+        // TODO add your handling code here:
+        jLabel2.setBackground(new Color(0,0,51));
+    }//GEN-LAST:event_jLabel2MouseEntered
+
+    private void jLabel2MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseExited
+        // TODO add your handling code here:
+        jLabel2.setBackground(new Color(255,102,0));
+    }//GEN-LAST:event_jLabel2MouseExited
       
      private void populateJComboBoxSearch() {
         try {

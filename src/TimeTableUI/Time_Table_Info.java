@@ -73,7 +73,7 @@ public class Time_Table_Info extends javax.swing.JFrame {
                 jLabel1MouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 590, 180, 50));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 610, 180, 50));
 
         jTable1.setBackground(new java.awt.Color(240, 240, 240));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -168,7 +168,7 @@ public class Time_Table_Info extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/time table management view.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 670));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1190, 710));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
