@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19a25233-63c8-4cdf-a73c-e1915a4af809">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="263" y="27" width="317" height="41" forecolor="#666666" uuid="7ba8bd59-3cb0-479d-871d-3d26f3026af2"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Visiting Lecturer Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="294" splitType="Stretch">
+			<staticText>
+				<reportElement x="172" y="45" width="100" height="20" uuid="07ade88d-81e0-4fe7-b5b0-1632e4b3c3df"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Temporary ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="272" y="45" width="100" height="20" uuid="815baf6d-daff-4960-9ce8-41ec7aa351ee"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="45" width="100" height="20" uuid="26cf4b95-d7c1-4ec2-95ab-578d69a42770"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="45" width="100" height="20" uuid="e697a5da-ed24-4ccd-a3eb-63ec9a1ccd97"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Contact Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="572" y="45" width="100" height="20" uuid="0fa4f4ad-c1cb-4a2a-8299-609d6053231a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Subject value]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="372" y="11" width="100" height="20" uuid="c9de5b67-59da-4564-b814-c34578679f40"/>
+				<text><![CDATA[College Time Table]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>
