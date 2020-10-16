@@ -95,6 +95,8 @@ public class Create_Time_Table extends javax.swing.JFrame {
         jComboBoxID = new javax.swing.JComboBox<>();
         jScrollPaneCTT = new javax.swing.JScrollPane();
         jTableCTT = new javax.swing.JTable();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -197,10 +199,10 @@ public class Create_Time_Table extends javax.swing.JFrame {
                 jComboBoxSaveByActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxSaveBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 140, 200, 30));
+        jPanel1.add(jComboBoxSaveBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(747, 139, 200, -1));
 
         jComboBoxID.setToolTipText("Select Timetable ID");
-        jPanel1.add(jComboBoxID, new org.netbeans.lib.awtextra.AbsoluteConstraints(986, 140, 180, 30));
+        jPanel1.add(jComboBoxID, new org.netbeans.lib.awtextra.AbsoluteConstraints(978, 138, 190, 30));
 
         jTableCTT.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jTableCTT.setModel(new javax.swing.table.DefaultTableModel(
@@ -228,6 +230,12 @@ public class Create_Time_Table extends javax.swing.JFrame {
         jScrollPaneCTT.setViewportView(jTableCTT);
 
         jPanel1.add(jScrollPaneCTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 730, 390));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(966, 134, -1, -1));
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(741, 134, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/time table management insert.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
@@ -588,6 +596,8 @@ public class Create_Time_Table extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

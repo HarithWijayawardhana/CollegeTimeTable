@@ -139,6 +139,8 @@ public class Edit_Time_Table extends javax.swing.JFrame {
         jLabel15 = new javax.swing.JLabel();
         jScrollPaneETT = new javax.swing.JScrollPane();
         jTableETT = new javax.swing.JTable();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
 
@@ -265,10 +267,10 @@ public class Edit_Time_Table extends javax.swing.JFrame {
                 jComboBoxSearchByActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 190, 20));
+        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(687, 134, 190, 30));
 
         jComboBoxSearch.setToolTipText("Select Timetable ID");
-        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 140, 190, 20));
+        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(912, 134, 190, 30));
 
         jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
         jLabel15.setText("jLabel15");
@@ -305,6 +307,12 @@ public class Edit_Time_Table extends javax.swing.JFrame {
         jScrollPaneETT.setViewportView(jTableETT);
 
         jPanel1.add(jScrollPaneETT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 720, 380));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 130, -1, -1));
+
+        jLabel18.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(902, 130, -1, -1));
 
         jLabel1.setBackground(new java.awt.Color(0, 153, 255));
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/time table management update.jpg"))); // NOI18N
@@ -722,7 +730,9 @@ public class Edit_Time_Table extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
