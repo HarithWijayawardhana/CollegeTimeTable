@@ -5,6 +5,7 @@
  */
 package TimeTableUI;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -49,14 +50,12 @@ public class lecturermanagementreportgen extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel16 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(1200, 700));
-        setPreferredSize(new java.awt.Dimension(1200, 700));
 
-        jPanel1.setMinimumSize(new java.awt.Dimension(1200, 700));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1151, 609));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
@@ -151,7 +150,22 @@ public class lecturermanagementreportgen extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, 610, 300));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 210, 610, 210));
+
+        jLabel16.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/table frme.jpg"))); // NOI18N
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 190, 630, 280));
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 60, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer hall management rg.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
@@ -162,75 +176,82 @@ public class lecturermanagementreportgen extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1200, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        lecturerhallmanagementadd insert = new lecturerhallmanagementadd();
+        insert.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+        // TODO add your handling code here:
+        lecturerhallmanagementview view = new lecturerhallmanagementview();
+        view.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel11MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        // TODO add your handling code here:
+        lecturermanagementupdate viewupdate = new lecturermanagementupdate();
+        viewupdate.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jLabel9MouseClicked
+
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
-         try{
-             Class.forName("com.mysql.jdbc.Driver");
-             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/collegetimetable?" + "user=root&password=Kushan@321");
-             
-             Statement st = con.createStatement();
-             String sql = "select * from lecturerhallmanagement";
-             ResultSet rs = st.executeQuery(sql);
-             
-             while(rs.next()){
-                 String hallid = String.valueOf(rs.getInt("hallId"));
-                 String name = rs.getString("hallName");
-                 String capacity = String.valueOf(rs.getInt("capacity"));
-                 String building = rs.getString("buildingName");
-                 
-                 String tbData[] = {hallid,name,capacity,building};
-                 DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
-                 tblModel.addRow(tbData);
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3307/collegetimetable?" + "user=root&password=Kushan@321");
 
-                 
+            Statement st = con.createStatement();
+            String sql = "select * from lecturerhallmanagement";
+            ResultSet rs = st.executeQuery(sql);
 
-             }
-            
-         con.close();     
+            while(rs.next()){
+                String hallid = String.valueOf(rs.getInt("hallId"));
+                String name = rs.getString("hallName");
+                String capacity = String.valueOf(rs.getInt("capacity"));
+                String building = rs.getString("buildingName");
+
+                String tbData[] = {hallid,name,capacity,building};
+                DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
+                tblModel.addRow(tbData);
+
+            }
+
+            con.close();
         }catch(Exception e){
-            
+
         }
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
-
     }//GEN-LAST:event_jTable1MouseClicked
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
         // TODO add your handling code here:
-         lecturerhallmanagementview view = new lecturerhallmanagementview();
-        view.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel11MouseClicked
+        jButton1.setBackground(new Color(255,63,0));
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
-         lecturerhallmanagementadd insert = new lecturerhallmanagementadd();
-        insert.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel8MouseClicked
+    }//GEN-LAST:event_jButton1MouseEntered
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
         // TODO add your handling code here:
-           lecturermanagementupdate viewupdate = new lecturermanagementupdate();
-        viewupdate.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel9MouseClicked
+
+        jButton1.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_jButton1MouseExited
 
     /**
      * @param args the command line arguments
@@ -259,6 +280,8 @@ public class lecturermanagementreportgen extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -269,12 +292,14 @@ public class lecturermanagementreportgen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

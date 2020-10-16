@@ -5,6 +5,7 @@
  */
 package TimeTableUI;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -33,10 +34,6 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        hallId1 = new javax.swing.JTextField();
-        building1 = new javax.swing.JComboBox<>();
-        capacity1 = new javax.swing.JTextField();
-        hallName1 = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -49,6 +46,11 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
+        hallId1 = new javax.swing.JTextField();
+        hallName1 = new javax.swing.JTextField();
+        capacity1 = new javax.swing.JTextField();
+        building1 = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,29 +58,6 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1200, 700));
         jPanel1.setPreferredSize(new java.awt.Dimension(1151, 609));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        hallId1.setBackground(new java.awt.Color(204, 204, 204));
-        hallId1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hallId1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(hallId1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 210, 540, 40));
-
-        building1.setBackground(new java.awt.Color(204, 204, 204));
-        building1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A400", "A410", "A510", "B500" }));
-        jPanel1.add(building1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 520, 540, 40));
-
-        capacity1.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel1.add(capacity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 420, 540, 40));
-
-        hallName1.setBackground(new java.awt.Color(204, 204, 204));
-        hallName1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                hallName1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(hallName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 310, 540, 40));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 100, 60));
@@ -166,6 +145,41 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         });
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 600, 180, 60));
 
+        hallId1.setBackground(new java.awt.Color(204, 204, 204));
+        hallId1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hallId1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(hallId1, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 206, 549, 44));
+
+        hallName1.setBackground(new java.awt.Color(204, 204, 204));
+        hallName1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                hallName1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(hallName1, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 309, 549, 44));
+
+        capacity1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.add(capacity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 414, 549, 44));
+
+        building1.setBackground(new java.awt.Color(204, 204, 204));
+        building1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A400", "A410", "A510", "B500" }));
+        jPanel1.add(building1, new org.netbeans.lib.awtextra.AbsoluteConstraints(558, 517, 549, 42));
+
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton1MouseExited(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 60, 60));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer hall management ADD.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
 
@@ -182,14 +196,6 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void hallId1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hallId1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hallId1ActionPerformed
-
-    private void hallName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hallName1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_hallName1ActionPerformed
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         // TODO add your handling code here:
@@ -256,6 +262,26 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jLabel6MouseClicked
 
+    private void hallId1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hallId1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hallId1ActionPerformed
+
+    private void hallName1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hallName1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_hallName1ActionPerformed
+
+    private void jButton1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseEntered
+        // TODO add your handling code here:
+        jButton1.setBackground(new Color(255,63,0));
+
+    }//GEN-LAST:event_jButton1MouseEntered
+
+    private void jButton1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseExited
+        // TODO add your handling code here:
+
+        jButton1.setBackground(new Color(255,255,255));
+    }//GEN-LAST:event_jButton1MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -283,6 +309,8 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         }
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -297,6 +325,7 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
     private javax.swing.JTextField capacity1;
     private javax.swing.JTextField hallId1;
     private javax.swing.JTextField hallName1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
