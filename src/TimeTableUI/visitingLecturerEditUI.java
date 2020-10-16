@@ -6,6 +6,7 @@
 package TimeTableUI;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -27,6 +28,12 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
      */
     public visitingLecturerEditUI() {
         initComponents();
+         setIconImage();
+        
+    }
+    
+       private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("timetable_60px.png")));
     }
 
     /**
@@ -51,11 +58,11 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jButton5 = new javax.swing.JButton();
         Home = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         View1 = new javax.swing.JButton();
         Add1 = new javax.swing.JButton();
         Edit1 = new javax.swing.JButton();
         Print = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
@@ -176,11 +183,27 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         });
         jPanel1.add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 17, 430, 120));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 140, 350, 60));
+
         View1.setBackground(new java.awt.Color(0, 0, 12));
         View1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         View1.setForeground(new java.awt.Color(255, 255, 255));
         View1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
-        View1.setText("VIEW");
+        View1.setText("VIEW LECTURER");
         View1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         View1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         View1.setIconTextGap(-20);
@@ -197,7 +220,7 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         Add1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         Add1.setForeground(new java.awt.Color(255, 255, 255));
         Add1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
-        Add1.setText("ADD");
+        Add1.setText("ADD LECTURER");
         Add1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Add1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Add1.setIconTextGap(-20);
@@ -214,7 +237,7 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         Edit1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         Edit1.setForeground(new java.awt.Color(255, 255, 255));
         Edit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        Edit1.setText("EDIT");
+        Edit1.setText("EDIT LECTURER");
         Edit1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Edit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Edit1.setIconTextGap(-20);
@@ -248,22 +271,6 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Print, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 410, 120));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel2.setForeground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 140, 350, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/table frme.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, 660, 250));
@@ -488,6 +495,10 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
 
     }//GEN-LAST:event_HomeMouseClicked
 
+    private void mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mailActionPerformed
+
     private void View1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View1MouseClicked
         // TODO add your handling code here:
 
@@ -527,10 +538,6 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
     private void PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PrintActionPerformed
-
-    private void mailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mailActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_mailActionPerformed
 
     /**
      * @param args the command line arguments

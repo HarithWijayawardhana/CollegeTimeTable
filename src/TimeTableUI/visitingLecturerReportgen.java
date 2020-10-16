@@ -5,6 +5,7 @@
  */
 package TimeTableUI;
 
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -23,6 +24,12 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
      */
     public visitingLecturerReportgen() {
         initComponents();
+           setIconImage();
+        
+    }
+    
+       private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("timetable_60px.png")));
     }
 
     /**
@@ -92,7 +99,7 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
         View1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         View1.setForeground(new java.awt.Color(255, 255, 255));
         View1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
-        View1.setText("VIEW");
+        View1.setText("VIEW LECTURER");
         View1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         View1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         View1.setIconTextGap(-20);
@@ -109,7 +116,7 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
         Add1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         Add1.setForeground(new java.awt.Color(255, 255, 255));
         Add1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
-        Add1.setText("ADD");
+        Add1.setText("ADD LECTURER");
         Add1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Add1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Add1.setIconTextGap(-20);
@@ -126,7 +133,7 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
         Edit1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         Edit1.setForeground(new java.awt.Color(255, 255, 255));
         Edit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        Edit1.setText("EDIT");
+        Edit1.setText("EDIT LECTURER");
         Edit1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Edit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Edit1.setIconTextGap(-20);

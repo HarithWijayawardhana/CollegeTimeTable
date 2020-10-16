@@ -6,6 +6,7 @@
 package TimeTableUI;
 
 import java.awt.Color;
+import java.awt.Toolkit;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -22,8 +23,13 @@ public class LecturerAdd extends javax.swing.JFrame {
      */
     public LecturerAdd() {
         initComponents();
+          setIconImage();
+        
     }
-
+    
+       private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("timetable_60px.png")));
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

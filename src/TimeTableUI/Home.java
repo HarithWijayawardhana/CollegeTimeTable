@@ -268,6 +268,6 @@ public class Home extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     private void setIconImage() {
-        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("home_50px.png")));
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("timetable_60px.png")));
     }
 }

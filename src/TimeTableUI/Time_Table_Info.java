@@ -7,6 +7,7 @@ package TimeTableUI;
 
 import java.awt.Color;
 import java.awt.MouseInfo;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
@@ -32,6 +33,12 @@ public class Time_Table_Info extends javax.swing.JFrame {
     public Time_Table_Info() {
         initComponents();
         createPopupMenu(this);
+          setIconImage();
+        
+    }
+    
+       private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("timetable_60px.png")));
     }
     
      private final JPopupMenu popupMenu = new JPopupMenu();
@@ -56,6 +63,8 @@ public class Time_Table_Info extends javax.swing.JFrame {
         View1 = new javax.swing.JButton();
         Add1 = new javax.swing.JButton();
         Edit1 = new javax.swing.JButton();
+        jButton5 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -81,7 +90,7 @@ public class Time_Table_Info extends javax.swing.JFrame {
                 "Time Table ID", "Time Table Name", "Subject", "Action"
             }
         ));
-        jTable1.setRowHeight(40);
+        jTable1.setRowHeight(50);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -89,7 +98,7 @@ public class Time_Table_Info extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 197, 700, 360));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 206, 700, 370));
 
         jTextField1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(907, 152, 190, 30));
@@ -104,6 +113,11 @@ public class Time_Table_Info extends javax.swing.JFrame {
         Print.setLabel(" REPORT GENARATION");
         Print.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Print.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Print.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PrintMouseClicked(evt);
+            }
+        });
         jPanel1.add(Print, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 410, 120));
 
         Home.setBackground(new java.awt.Color(215, 82, 16));
@@ -116,43 +130,87 @@ public class Time_Table_Info extends javax.swing.JFrame {
         Home.setIconTextGap(-20);
         Home.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt);
+            }
+        });
         jPanel1.add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 17, 430, 120));
 
         View1.setBackground(new java.awt.Color(0, 0, 12));
         View1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         View1.setForeground(new java.awt.Color(255, 255, 255));
         View1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
-        View1.setText("VIEW");
+        View1.setText("VIEW TIME TABLE");
         View1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         View1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         View1.setIconTextGap(-20);
         View1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         View1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        View1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                View1MouseClicked(evt);
+            }
+        });
         jPanel1.add(View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 410, 120));
 
         Add1.setBackground(new java.awt.Color(0, 0, 12));
         Add1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         Add1.setForeground(new java.awt.Color(255, 255, 255));
         Add1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
-        Add1.setText("ADD");
+        Add1.setText("ADD TIME TABLE");
         Add1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Add1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Add1.setIconTextGap(-20);
         Add1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Add1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Add1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Add1MouseClicked(evt);
+            }
+        });
         jPanel1.add(Add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 410, 120));
 
         Edit1.setBackground(new java.awt.Color(0, 0, 12));
         Edit1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
         Edit1.setForeground(new java.awt.Color(255, 255, 255));
         Edit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        Edit1.setText("EDIT");
+        Edit1.setText("EDIT TIME TABLE");
         Edit1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         Edit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Edit1.setIconTextGap(-20);
         Edit1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         Edit1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Edit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Edit1MouseClicked(evt);
+            }
+        });
         jPanel1.add(Edit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 410, 120));
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 12));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton5MouseExited(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 60, 60));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/table frame.jpg"))); // NOI18N
+        jLabel3.setText("jLabel3");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 190, 720, 410));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/time table management view.jpg"))); // NOI18N
         jLabel2.setText("jLabel2");
@@ -319,6 +377,66 @@ public class Time_Table_Info extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jLabel1MouseClicked
 
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+
+        AdminHome ah = new AdminHome();
+        ah.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+        // TODO add your handling code here:
+
+        jButton5.setBackground(new Color(255,63,0));
+
+    }//GEN-LAST:event_jButton5MouseEntered
+
+    private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
+        // TODO add your handling code here:
+        jButton5.setBackground(new Color(0,0,12));
+    }//GEN-LAST:event_jButton5MouseExited
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+        // TODO add your handling code here:
+         Home h = new Home();
+         h.setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_HomeMouseClicked
+
+    private void View1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View1MouseClicked
+        // TODO add your handling code here:
+         View_Time_Table v = new View_Time_Table();
+         v.setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_View1MouseClicked
+
+    private void Add1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Add1MouseClicked
+        // TODO add your handling code here:
+        Create_Time_Table c = new Create_Time_Table();
+         c.setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_Add1MouseClicked
+
+    private void Edit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Edit1MouseClicked
+        // TODO add your handling code here:
+         Edit_Time_Table e = new Edit_Time_Table();
+         e.setVisible(true);
+         this.setVisible(false);
+    }//GEN-LAST:event_Edit1MouseClicked
+
+    private void PrintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrintMouseClicked
+        // TODO add your handling code here:
+        Time_Table_Report r = new Time_Table_Report();
+        r.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_PrintMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -361,8 +479,10 @@ public class Time_Table_Info extends javax.swing.JFrame {
     private javax.swing.JButton Home;
     private javax.swing.JButton Print;
     private javax.swing.JButton View1;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

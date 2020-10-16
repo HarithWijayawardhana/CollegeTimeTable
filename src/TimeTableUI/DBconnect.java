@@ -25,7 +25,7 @@ public class DBconnect {
         Connection conn = null;
         
         try {
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
             
         } catch (Exception ex) {
             System.out.println(ex.getMessage());
@@ -38,7 +38,7 @@ public class DBconnect {
     static void Connect(){
        try
         {
-            String host = "jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234";
+            String host = "jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root";
             String usn ="root";
             String pwd = "mysql1234";
             
