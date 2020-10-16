@@ -5,3 +5,5 @@ Database: MySQL
 
 Pre conditions: *Apply libraries in the library folder and add mysql connect.
                 *Add all the tables in the collegetimetable.sql file for to system work properly.
+                
+                ** Add Image in the Image folder to the TimetableUI package otherwise the system doesn't work(A error will occur) 
