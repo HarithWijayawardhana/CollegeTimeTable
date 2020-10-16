@@ -305,7 +305,7 @@ public class Create_Time_Table extends javax.swing.JFrame {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Hello");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
             
             PreparedStatement statement = null;
             ResultSet resultSet = null;
@@ -379,7 +379,7 @@ public class Create_Time_Table extends javax.swing.JFrame {
          try {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Hello");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
             
             if(jComboBoxID.getSelectedItem().toString().equals("")){
                 JOptionPane.showMessageDialog(null, "Please enter a timetable id: Lecturer ID/Batch ID/Hall ID", "Warning!", JOptionPane.WARNING_MESSAGE);
@@ -421,19 +421,19 @@ public class Create_Time_Table extends javax.swing.JFrame {
                             switch (saveBy) {
                                 case "Save by Lecturer":
                                     lecturerID = jComboBoxID.getSelectedItem().toString();
-                                    fileLocation = "C:\\Users\\Isuru\\Desktop\\hci2\\TimeTables\\" + lecturerID;
+                                    fileLocation = "H:\\NetBeans Project\\CTT\\CollegeTimeTable\\timetables\\" + lecturerID;
                                     statement.setString(1, fileLocation);
                                     statement.setString(2, lecturerID );
                                     break;
                                 case "Save by Lecture Hall":
                                     hallID = jComboBoxID.getSelectedItem().toString();
-                                    fileLocation = "C:\\Users\\Isuru\\Desktop\\hci2\\TimeTables\\" + hallID;
+                                    fileLocation = "H:\\NetBeans Project\\CTT\\CollegeTimeTable\\timetables\\" + hallID;
                                     statement.setString(1, fileLocation);
                                     statement.setString(3, hallID );
                                     break;
                                 case "Save by Batch":
                                     batchID = jComboBoxID.getSelectedItem().toString();
-                                    fileLocation = "C:\\Users\\Isuru\\Desktop\\hci2\\TimeTables\\" + batchID;
+                                    fileLocation = "H:\\NetBeans Project\\CTT\\CollegeTimeTable\\timetables\\" + batchID;
                                     statement.setString(1, fileLocation);
                                     statement.setString(4, batchID );
                                     break;

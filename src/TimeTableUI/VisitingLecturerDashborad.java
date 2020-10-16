@@ -256,7 +256,7 @@ public class VisitingLecturerDashborad extends javax.swing.JFrame {
         try {
            Class.forName("com.mysql.jdbc.Driver");
             System.out.println("Hello");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=root");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
             
             PreparedStatement statement = null;
             ResultSet resultSet = null;
