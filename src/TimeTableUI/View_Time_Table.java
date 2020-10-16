@@ -111,6 +111,8 @@ public class View_Time_Table extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPaneVTT = new javax.swing.JScrollPane();
         jTableVTT = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -198,10 +200,10 @@ public class View_Time_Table extends javax.swing.JFrame {
                 jComboBoxSearchByActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 200, 20));
+        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(682, 143, 200, 30));
 
         jComboBoxSearch.setToolTipText("Select Timetable ID");
-        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 150, 200, 20));
+        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(908, 143, 200, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -236,6 +238,12 @@ public class View_Time_Table extends javax.swing.JFrame {
         jScrollPaneVTT.setViewportView(jTableVTT);
 
         jPanel1.add(jScrollPaneVTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 730, 410));
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(902, 140, -1, -1));
+
+        jLabel14.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 140, -1, -1));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/time table management view table.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
@@ -510,6 +518,8 @@ public class View_Time_Table extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
