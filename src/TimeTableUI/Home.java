@@ -44,6 +44,9 @@ public class Home extends javax.swing.JFrame {
         vlec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visiting lec.png"))); // NOI18N
         vlec.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         vlec.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                vlecMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 vlecMouseEntered(evt);
             }
@@ -63,6 +66,9 @@ public class Home extends javax.swing.JFrame {
         lec.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer.png"))); // NOI18N
         lec.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         lec.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lecMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 lecMouseEntered(evt);
             }
@@ -82,6 +88,9 @@ public class Home extends javax.swing.JFrame {
         admin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/admin.png"))); // NOI18N
         admin.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 0, 0));
         admin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 adminMouseEntered(evt);
             }
@@ -178,6 +187,35 @@ public class Home extends javax.swing.JFrame {
         vlec.setBackground(new Color(0,0,12));
         
     }//GEN-LAST:event_vlecMouseExited
+
+    private void adminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseClicked
+        // TODO add your handling code here:
+        
+        AdminHome a = new AdminHome();
+        a.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_adminMouseClicked
+
+    private void lecMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lecMouseClicked
+        // TODO add your handling code here:
+        
+        LecturerDashborad l = new LecturerDashborad();
+        
+        l.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_lecMouseClicked
+
+    private void vlecMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_vlecMouseClicked
+        // TODO add your handling code here:
+        
+        VisitingLecturerDashborad v = new VisitingLecturerDashborad();
+        
+        v.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_vlecMouseClicked
 
     /**
      * @param args the command line arguments

@@ -5,6 +5,7 @@
  */
 package TimeTableUI;
 
+import java.awt.Color;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -50,7 +51,7 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         updateLabel = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        deleteButton = new javax.swing.JLabel();
         sVenue = new javax.swing.JTextField();
         cNumber = new javax.swing.JTextField();
         mail = new javax.swing.JTextField();
@@ -58,6 +59,7 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         tempId = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jButton5 = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -80,6 +82,11 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("                   VIEW LECTURER");
         jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 165, 380, 110));
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
@@ -89,6 +96,11 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("                       ADD LECTURER");
         jLabel7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 300, 410, 100));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
@@ -98,6 +110,11 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         jLabel9.setForeground(new java.awt.Color(255, 255, 255));
         jLabel9.setText("                    EDIT LECTURER");
         jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel9MouseClicked(evt);
+            }
+        });
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(28, 426, 400, 110));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
@@ -129,10 +146,15 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
         });
         jPanel1.add(updateLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 625, 170, 40));
 
-        jLabel14.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("           DELETE");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 625, 180, 40));
+        deleteButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        deleteButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteButton.setText("           DELETE");
+        deleteButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteButtonMouseClicked(evt);
+            }
+        });
+        jPanel1.add(deleteButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(960, 625, 180, 40));
 
         sVenue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,6 +196,26 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 190, 750, 180));
 
+        jButton5.setBackground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton5MouseExited(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 60, 60));
+
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visiting lecturer management UPDATE.jpg"))); // NOI18N
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -207,8 +249,6 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         // TODO add your handling code here:
 
-        int count = 2;
-
         //Database connection
         try {
 
@@ -224,8 +264,6 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
 
             while (rs.next()) {
 
-                count = count + 1;
-
                 String id = rs.getString("temporyId");
 
                 String lecName = rs.getString("lecturerName");
@@ -239,7 +277,7 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
                 String tbData[] = {id, lecName, email, contact, subjectVenue};
                 DefaultTableModel tblModel = (DefaultTableModel) jTable1.getModel();
 
-                if (tblModel.getRowCount() == tbData.length - 2) {
+                if (tblModel.getRowCount() == tbData.length) {
 
                     System.out.println("error");
                     String message = "\"All information are viewed\"\n";
@@ -284,10 +322,12 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
 
             System.out.println("Hello");
 
-            Class.forName("com.mysql.jdbc.Driver");
-            System.out.println("Hello");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
+//            Class.forName("com.mysql.jdbc.Driver");
+//            System.out.println("Hello");
+//            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
             //username is root password is mysql1234
+            DBconnect db = new DBconnect();
+            Connection con = db.getConnection();
 
             String value1 = tempId.getText();
             String value2 = nm.getText();
@@ -321,6 +361,96 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_updateLabelMouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturer v = new visitingLecturer();
+        v.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+        // TODO add your handling code here:
+
+        jButton5.setBackground(new Color(255, 63, 0));
+    }//GEN-LAST:event_jButton5MouseEntered
+
+    private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
+        // TODO add your handling code here:
+        jButton5.setBackground(new Color(255, 255, 255));
+    }//GEN-LAST:event_jButton5MouseExited
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturer v = new visitingLecturer();
+        v.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturerAdd v = new visitingLecturerAdd();
+
+        this.setVisible(false);
+        v.setVisible(true);
+
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+        // TODO add your handling code here:
+
+        JOptionPane.showMessageDialog(null, "You are already in the Edit tab");
+
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void deleteButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteButtonMouseClicked
+        // TODO add your handling code here:
+
+        try {
+
+
+
+            DBconnect db = new DBconnect();
+            Connection con = db.getConnection();
+            //username is root password is mysql1234
+
+            String value1 = tempId.getText();
+//            String value2 = nm.getText();
+//            String value3 = mail.getText();
+//            String value4 = cNumber.getText();
+//            String value5 = sVenue.getText();
+
+            String sql = "DELETE FROM visitinglecturer WHERE temporyId ='" + value1 + "' ";
+
+            PreparedStatement pst = con.prepareStatement(sql);
+
+            pst.execute();
+
+            DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+            int[] rows = jTable1.getSelectedRows();
+            for (int i = 0; i < rows.length; i++) {
+                model.removeRow(rows[i] - i);
+            }
+
+            System.out.println("Deleted successfully");
+            JOptionPane.showMessageDialog(null, "Deleted successfully");
+
+            con.close();
+
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+
+    }//GEN-LAST:event_deleteButtonMouseClicked
 
     /**
      * @param args the command line arguments
@@ -360,11 +490,12 @@ public class visitingLecturerEditUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField cNumber;
+    private javax.swing.JLabel deleteButton;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
