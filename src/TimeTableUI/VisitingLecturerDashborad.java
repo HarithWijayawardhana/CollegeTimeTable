@@ -5,6 +5,7 @@
  */
 package TimeTableUI;
 
+import java.awt.Color;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -14,6 +15,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import org.apache.poi.xssf.usermodel.XSSFCell;
@@ -44,66 +46,23 @@ public class VisitingLecturerDashborad extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
         jComboBoxSearchBy = new javax.swing.JComboBox<>();
         jComboBoxSearch = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
         jScrollPaneVTT = new javax.swing.JScrollPane();
         jTableVTT = new javax.swing.JTable();
+        Home = new javax.swing.JButton();
+        View1 = new javax.swing.JButton();
+        Print = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 80, 60));
-
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("                          HOME");
-        jLabel4.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(2, -1, 440, 120));
-
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 150, 90, 80));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("                            VIEW");
-        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 156, 400, 110));
-
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 550, -1, 60));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 1, 21)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setText("             REPORT GENARATION");
-        jLabel12.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel12.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel12MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(22, 546, 400, 110));
 
         jComboBoxSearchBy.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jComboBoxSearchBy.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Search by Lecturer", "Search by Batch", "Search by Lecture Hall" }));
@@ -114,10 +73,10 @@ public class VisitingLecturerDashborad extends javax.swing.JFrame {
                 jComboBoxSearchByActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 150, 200, 20));
+        jPanel1.add(jComboBoxSearchBy, new org.netbeans.lib.awtextra.AbsoluteConstraints(676, 144, 200, -1));
 
         jComboBoxSearch.setToolTipText("Select Timetable ID");
-        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 150, 200, 20));
+        jPanel1.add(jComboBoxSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 144, 200, 30));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/search.png"))); // NOI18N
         jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,7 +110,85 @@ public class VisitingLecturerDashborad extends javax.swing.JFrame {
         jTableVTT.setSelectionBackground(new java.awt.Color(0, 204, 204));
         jScrollPaneVTT.setViewportView(jTableVTT);
 
-        jPanel1.add(jScrollPaneVTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 240, 730, 430));
+        jPanel1.add(jScrollPaneVTT, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 710, 420));
+
+        Home.setBackground(new java.awt.Color(215, 82, 16));
+        Home.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Home.setForeground(new java.awt.Color(255, 255, 255));
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
+        Home.setText("HOME");
+        Home.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Home.setIconTextGap(-20);
+        Home.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 17, 430, 120));
+
+        View1.setBackground(new java.awt.Color(0, 0, 12));
+        View1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        View1.setForeground(new java.awt.Color(255, 255, 255));
+        View1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
+        View1.setText("VIEW TIME TABLE");
+        View1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        View1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        View1.setIconTextGap(-20);
+        View1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        View1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                View1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 410, 210));
+
+        Print.setBackground(new java.awt.Color(0, 0, 12));
+        Print.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Print.setForeground(new java.awt.Color(255, 255, 255));
+        Print.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
+        Print.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Print.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Print.setIconTextGap(-20);
+        Print.setLabel(" REPORT GENARATION");
+        Print.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Print.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PrintMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Print, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 410, 210));
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(895, 140, -1, -1));
+
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/drop down bar.png"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, -1, -1));
+
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/table frame.jpg"))); // NOI18N
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 200, -1, 450));
+
+        jButton5.setBackground(new java.awt.Color(0, 0, 12));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
+        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton5MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jButton5MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jButton5MouseExited(evt);
+            }
+        });
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 10, 60, 60));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visiting lecturer's time table view.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
@@ -169,27 +206,6 @@ public class VisitingLecturerDashborad extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        // TODO add your handling code here:
-        AdminHome tablehome = new AdminHome();
-        tablehome .setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
-        View_Time_Table view = new View_Time_Table();
-        view.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel6MouseClicked
-
-    private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
-        // TODO add your handling code here:
-        Time_Table_Report report = new Time_Table_Report();
-        report.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jComboBoxSearchByActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxSearchByActionPerformed
         populateJComboBoxSearch();
@@ -251,6 +267,50 @@ public class VisitingLecturerDashborad extends javax.swing.JFrame {
             System.out.println(ex.getMessage());
         }
     }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+        // TODO add your handling code here:
+        Home h = new Home();
+        h.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_HomeMouseClicked
+
+    private void View1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View1MouseClicked
+        // TODO add your handling code here:
+        View_Time_Table v = new View_Time_Table();
+        v.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_View1MouseClicked
+
+    private void PrintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrintMouseClicked
+        // TODO add your handling code here:
+        Time_Table_Report r = new Time_Table_Report();
+        r.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_PrintMouseClicked
+
+    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
+        // TODO add your handling code here:
+
+        AdminHome ah = new AdminHome();
+        ah.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
+        // TODO add your handling code here:
+
+        jButton5.setBackground(new Color(255,63,0));
+    }//GEN-LAST:event_jButton5MouseEntered
+
+    private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
+        // TODO add your handling code here:
+        jButton5.setBackground(new Color(0,0,12));
+    }//GEN-LAST:event_jButton5MouseExited
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
 
      private void populateJComboBoxSearch() {
         try {
@@ -395,22 +455,26 @@ public class VisitingLecturerDashborad extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VisitingLecturerDashborad().setVisible(true);
+                VisitingLecturerDashborad viewTimeTable = new VisitingLecturerDashborad();
+                viewTimeTable.setSize(800, 400);
+                viewTimeTable.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                viewTimeTable.show();
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Home;
+    private javax.swing.JButton Print;
+    private javax.swing.JButton View1;
+    private javax.swing.JButton jButton5;
     private javax.swing.JComboBox<String> jComboBoxSearch;
     private javax.swing.JComboBox<String> jComboBoxSearchBy;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPaneVTT;
     private javax.swing.JTable jTableVTT;

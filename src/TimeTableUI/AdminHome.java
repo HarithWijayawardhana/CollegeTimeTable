@@ -112,6 +112,9 @@ public class AdminHome extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(0, 0, 12));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/timetbe.png"))); // NOI18N
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton4MouseEntered(evt);
             }
@@ -285,6 +288,13 @@ public class AdminHome extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        // TODO add your handling code here:
+        Time_Table_Info ti= new Time_Table_Info();
+        ti.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_jButton4MouseClicked
 
     /**
      * @param args the command line arguments
