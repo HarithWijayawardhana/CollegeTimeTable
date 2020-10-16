@@ -18,6 +18,8 @@ public class Home extends javax.swing.JFrame {
     /**
      * Creates new form Home
      */
+    
+    //Hello
     public Home() {
         initComponents();
         
