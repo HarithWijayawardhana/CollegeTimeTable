@@ -7,6 +7,7 @@ package TimeTableUI;
 
 import java.awt.Color;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -36,38 +37,24 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel2 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
         addButton = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        viewLecturer = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
         txtSubjectVenue = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
+        Home = new javax.swing.JButton();
+        View1 = new javax.swing.JButton();
+        Add1 = new javax.swing.JButton();
+        Edit1 = new javax.swing.JButton();
+        Print = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
-        jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 100, 90));
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("                   HOME");
-        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, 350, 120));
 
         addButton.setBackground(new java.awt.Color(0, 0, 0));
         addButton.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
@@ -83,53 +70,6 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("          CLEAR");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 610, 160, 40));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
-        jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 130, 80));
-
-        viewLecturer.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        viewLecturer.setForeground(new java.awt.Color(255, 255, 255));
-        viewLecturer.setText("                VIEW LECTURER");
-        viewLecturer.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        viewLecturer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewLecturerMouseClicked(evt);
-            }
-        });
-        jPanel2.add(viewLecturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 170, 370, 110));
-
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        jPanel2.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 420, 170, 70));
-
-        jLabel10.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setText("                  ADD LECTURER");
-        jLabel10.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 370, 110));
-
-        jLabel8.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
-        jPanel2.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 200, 80));
-
-        jLabel11.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("                    EDIT LECTURER");
-        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(26, 420, 400, 110));
-
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
-        jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 560, 150, 80));
-
-        jLabel13.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("                REPORT GENERATION");
-        jLabel13.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 410, 110));
 
         txtSubjectVenue.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "A01", "B01", "NB3", "A02" }));
         txtSubjectVenue.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +109,96 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
         });
         jPanel2.add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 60, 60));
 
+        Home.setBackground(new java.awt.Color(215, 82, 16));
+        Home.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Home.setForeground(new java.awt.Color(255, 255, 255));
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
+        Home.setText("HOME");
+        Home.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Home.setIconTextGap(-20);
+        Home.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt);
+            }
+        });
+        jPanel2.add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 17, 430, 120));
+
+        View1.setBackground(new java.awt.Color(0, 0, 12));
+        View1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        View1.setForeground(new java.awt.Color(255, 255, 255));
+        View1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
+        View1.setText("VIEW");
+        View1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        View1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        View1.setIconTextGap(-20);
+        View1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        View1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        View1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                View1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 410, 120));
+
+        Add1.setBackground(new java.awt.Color(0, 0, 12));
+        Add1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Add1.setForeground(new java.awt.Color(255, 255, 255));
+        Add1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        Add1.setText("ADD");
+        Add1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Add1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Add1.setIconTextGap(-20);
+        Add1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Add1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Add1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Add1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(Add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 410, 120));
+
+        Edit1.setBackground(new java.awt.Color(0, 0, 12));
+        Edit1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Edit1.setForeground(new java.awt.Color(255, 255, 255));
+        Edit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        Edit1.setText("EDIT");
+        Edit1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Edit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Edit1.setIconTextGap(-20);
+        Edit1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Edit1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Edit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Edit1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(Edit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 410, 120));
+
+        Print.setBackground(new java.awt.Color(0, 0, 12));
+        Print.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Print.setForeground(new java.awt.Color(255, 255, 255));
+        Print.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
+        Print.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Print.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Print.setIconTextGap(-20);
+        Print.setLabel(" REPORT GENARATION");
+        Print.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Print.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Print.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PrintMouseClicked(evt);
+            }
+        });
+        Print.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintActionPerformed(evt);
+            }
+        });
+        jPanel2.add(Print, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 410, 120));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visiting lecturer management ADD.jpg"))); // NOI18N
         jLabel1.setText("jLabel1");
         jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
@@ -187,16 +217,6 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void viewLecturerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLecturerMouseClicked
-        // TODO add your handling code here:
-
-        visitingLecturer v = new visitingLecturer();
-
-        v.setVisible(true);
-        this.setVisible(false);
-
-    }//GEN-LAST:event_viewLecturerMouseClicked
-
     private void txtSubjectVenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSubjectVenueActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtSubjectVenueActionPerformed
@@ -204,9 +224,82 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
     private void addButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addButtonMouseClicked
         // TODO add your handling code here:
 
+//        try {
+//
+//            DBconnect db = new DBconnect();
+//            Connection conn = db.getConnection();
+//            //username is root password is mysql1234
+//
+//            String sql2 = "select * from visitinglecturer where temporyId = ?";
+//
+//            PreparedStatement pst = conn.prepareStatement(sql2);
+//
+//            pst.setString(1, jTextField1.getText());
+//
+//            ResultSet rs = pst.executeQuery();
+//
+//            if (rs.next()) {
+//                JOptionPane.showMessageDialog(null, "A lecturer with this lecture ID already exists", "Errors", JOptionPane.ERROR_MESSAGE);
+//            }
+//
+//            else if (jTextField1.getText().isEmpty() && jTextField2.getText().isEmpty() && jTextField3.getText().isEmpty() && jTextField4.getText().isEmpty() || txtSubjectVenue.getSelectedIndex() == -1) {
+//                JOptionPane.showMessageDialog(null, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
+//            } else if (jTextField1.getText().isEmpty()) {
+//                JOptionPane.showMessageDialog(null, "Please enter a Temporery ID", "Error", JOptionPane.ERROR_MESSAGE);
+//            } else if (jTextField2.getText().isEmpty()) {
+//                JOptionPane.showMessageDialog(null, "Please enter a Name", "Error", JOptionPane.ERROR_MESSAGE);
+//            } else if (jTextField3.getText().isEmpty()) {
+//                JOptionPane.showMessageDialog(null, "Please enter a Email", "Error", JOptionPane.ERROR_MESSAGE);
+//            } else if (jTextField4.getText().isEmpty()) {
+//                JOptionPane.showMessageDialog(null, "Please enter a parent's name", "Error", JOptionPane.ERROR_MESSAGE);
+//            } else if (txtSubjectVenue.getSelectedIndex() == -1) {
+//                JOptionPane.showMessageDialog(null, "Please enter a parent's name", "Error", JOptionPane.ERROR_MESSAGE);
+//            } //            else if (txtTel.getText().length() < 10 || txtTel.getText().length() > 10) {
+//            //                String msg = "Please enter a contact number with 10 digits. \nYou have entered '" + txtTel.getText().length() + "' numbers";
+//            //                JOptionPane.showMessageDialog(null, msg, "Error", JOptionPane.ERROR_MESSAGE);
+//            //            } else if (rbtnMale.isSelected() == false && rbtnFemale.isSelected() == false) {
+//            //                JOptionPane.showMessageDialog(null, "Please select a gender", "Error", JOptionPane.ERROR_MESSAGE);
+//            //            } else if (txtEmail.getText().isEmpty()) {
+//            //                JOptionPane.showMessageDialog(null, "Please enter an email", "Error", JOptionPane.ERROR_MESSAGE);
+//            //            } else if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", txtEmail.getText()))) {
+//            //                JOptionPane.showMessageDialog(null, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
+//            //            } 
+//            else {
+//
+//                String query = "insert into visitinglecturer(temporyId, lecturerName, email, contactNumber, subjectVenue) values(?,?,?,?,?)";
+//
+//                pst = conn.prepareStatement(query);
+//
+//                pst.setString(1, jTextField1.getText());
+//                pst.setString(2, jTextField2.getText());
+//                pst.setString(3, jTextField3.getText());
+//                pst.setString(4, jTextField4.getText());
+//
+////                if (rbtnMale.isSelected()) {
+////                    pst.setString(4, "Male");
+////                } else if (rbtnFemale.isSelected()) {
+////                    pst.setString(4, "Female");
+////                }
+//                pst.setString(5, txtSubjectVenue.getSelectedItem().toString());
+////                pst.setString(6, txtEmail.getText());
+////                pst.setString(7, cmbPosition.getSelectedItem().toString());
+//
+////                pst.executeUpdate();
+//                JOptionPane.showMessageDialog(null, "Successfully saved");
+//
+//                conn.close();
+//
+//                System.out.println("Awa");
+//            }
+//        } catch (SQLException ex) {
+//            //JOptionPane.showMessageDialog(null, ex);
+//            System.out.println(ex.getMessage());
+//        } catch (Exception ex) {
+//            System.out.println(ex.getMessage());
+//        }
         try {
-            DBconnect db = new DBconnect();
-            Connection conn = db.getConnection();
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=mysql1234");
 
             String sql2 = "select * from visitinglecturer where temporyId = ?";
 
@@ -218,12 +311,9 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
 
             if (rs.next()) {
                 JOptionPane.showMessageDialog(null, "A lecturer with this lecture ID already exists", "Errors", JOptionPane.ERROR_MESSAGE);
-            }
-
-            if (jTextField1.getText().isEmpty() && jTextField2.getText().isEmpty() && jTextField3.getText().isEmpty() && jTextField4.getText().isEmpty() || txtSubjectVenue.getSelectedIndex() == -1) {
+            } else if (jTextField1.getText().isEmpty() && jTextField2.getText().isEmpty() && jTextField3.getText().isEmpty() && jTextField4.getText().isEmpty() || txtSubjectVenue.getSelectedIndex() == -1) {
                 JOptionPane.showMessageDialog(null, "Please fill all the fields", "Error", JOptionPane.ERROR_MESSAGE);
-            } else
-            if (jTextField1.getText().isEmpty()) {
+            } else if (jTextField1.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please enter a Temporery ID", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (jTextField2.getText().isEmpty()) {
                 JOptionPane.showMessageDialog(null, "Please enter a Name", "Error", JOptionPane.ERROR_MESSAGE);
@@ -233,45 +323,27 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Please enter a parent's name", "Error", JOptionPane.ERROR_MESSAGE);
             } else if (txtSubjectVenue.getSelectedIndex() == -1) {
                 JOptionPane.showMessageDialog(null, "Please enter a parent's name", "Error", JOptionPane.ERROR_MESSAGE);
-            } //            else if (txtTel.getText().length() < 10 || txtTel.getText().length() > 10) {
-            //                String msg = "Please enter a contact number with 10 digits. \nYou have entered '" + txtTel.getText().length() + "' numbers";
-            //                JOptionPane.showMessageDialog(null, msg, "Error", JOptionPane.ERROR_MESSAGE);
-            //            } else if (rbtnMale.isSelected() == false && rbtnFemale.isSelected() == false) {
-            //                JOptionPane.showMessageDialog(null, "Please select a gender", "Error", JOptionPane.ERROR_MESSAGE);
-            //            } else if (txtEmail.getText().isEmpty()) {
-            //                JOptionPane.showMessageDialog(null, "Please enter an email", "Error", JOptionPane.ERROR_MESSAGE);
-            //            } else if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", txtEmail.getText()))) {
-            //                JOptionPane.showMessageDialog(null, "Please enter a valid email", "Error", JOptionPane.ERROR_MESSAGE);
-            //            } 
-            else {
+            } else {
 
-                String query = "insert into visitinglecturer(temporyId, lecturerName, email, contactNumber, subjectVenue) values(?,?,?,?,?)";
-
-                pst = conn.prepareStatement(query);
-
+               String sql = "insert into visitinglecturer values(?, ?, ?, ?, ?)";
+               
+               pst = conn.prepareStatement(sql);
+               
+//            PreparedStatement pst = conn.prepareStatement(sql);
                 pst.setString(1, jTextField1.getText());
                 pst.setString(2, jTextField2.getText());
                 pst.setString(3, jTextField3.getText());
                 pst.setString(4, jTextField4.getText());
-
-//                if (rbtnMale.isSelected()) {
-//                    pst.setString(4, "Male");
-//                } else if (rbtnFemale.isSelected()) {
-//                    pst.setString(4, "Female");
-//                }
                 pst.setString(5, txtSubjectVenue.getSelectedItem().toString());
-//                pst.setString(6, txtEmail.getText());
-//                pst.setString(7, cmbPosition.getSelectedItem().toString());
 
-//                pst.executeUpdate();
+                pst.executeUpdate();
+                JOptionPane.showMessageDialog(null, "Insertion Successfully");
+                conn.close();
 
-                JOptionPane.showMessageDialog(null, "Successfully saved");
             }
-        } catch (SQLException ex) {
-            //JOptionPane.showMessageDialog(null, ex);
-            System.out.println(ex.getMessage());
-        } catch (Exception ex) {
-            System.out.println(ex.getMessage());
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, e);
         }
 
 
@@ -292,27 +364,67 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
     private void jButton5MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseEntered
         // TODO add your handling code here:
 
-        jButton5.setBackground(new Color(255,63,0));
+        jButton5.setBackground(new Color(255, 63, 0));
     }//GEN-LAST:event_jButton5MouseEntered
 
     private void jButton5MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseExited
         // TODO add your handling code here:
-        jButton5.setBackground(new Color(255,255,255));
+        jButton5.setBackground(new Color(255, 255, 255));
     }//GEN-LAST:event_jButton5MouseExited
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton5ActionPerformed
 
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         // TODO add your handling code here:
-        
-        visitingLecturerEditUI v = new visitingLecturerEditUI();
-        
+
+        Home h = new Home();
+
+        h.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_HomeMouseClicked
+
+    private void View1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View1MouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturer v = new visitingLecturer();
         v.setVisible(true);
         this.setVisible(false);
-        
-    }//GEN-LAST:event_jLabel11MouseClicked
+
+    }//GEN-LAST:event_View1MouseClicked
+
+    private void Add1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Add1MouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturerAdd v = new visitingLecturerAdd();
+        v.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_Add1MouseClicked
+
+    private void Edit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Edit1MouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturerEditUI v = new visitingLecturerEditUI();
+        v.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_Edit1MouseClicked
+
+    private void PrintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrintMouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturerReportgen v = new visitingLecturerReportgen();
+        v.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_PrintMouseClicked
+
+    private void PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrintActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,25 +462,20 @@ public class visitingLecturerAdd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add1;
+    private javax.swing.JButton Edit1;
+    private javax.swing.JButton Home;
+    private javax.swing.JButton Print;
+    private javax.swing.JButton View1;
     private javax.swing.JLabel addButton;
     private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JComboBox<String> txtSubjectVenue;
-    private javax.swing.JLabel viewLecturer;
     // End of variables declaration//GEN-END:variables
 }

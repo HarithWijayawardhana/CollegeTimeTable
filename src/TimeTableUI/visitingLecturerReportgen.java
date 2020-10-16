@@ -35,20 +35,15 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        addLecturer = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        Home = new javax.swing.JButton();
+        View1 = new javax.swing.JButton();
+        Add1 = new javax.swing.JButton();
+        Edit1 = new javax.swing.JButton();
+        Print = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
@@ -56,67 +51,6 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 90, 80));
-
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("                       HOME");
-        jLabel3.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 410, 120));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 130, 80));
-
-        jLabel5.setBackground(new java.awt.Color(255, 255, 255));
-        jLabel5.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setText("                   VIEW LECTURER");
-        jLabel5.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 390, 90));
-
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 290, 110, 80));
-
-        addLecturer.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        addLecturer.setForeground(new java.awt.Color(255, 255, 255));
-        addLecturer.setText("                   ADD LECTURER");
-        addLecturer.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        addLecturer.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                addLecturerMouseClicked(evt);
-            }
-        });
-        jPanel1.add(addLecturer, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 390, 90));
-
-        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 120, 70));
-
-        jLabel9.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("                  EDIT LECTURER");
-        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(34, 435, 380, 100));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 560, 100, 60));
-
-        jLabel11.setFont(new java.awt.Font("Dialog", 1, 20)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("              REPORT GENERATION");
-        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 555, 390, 110));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -136,6 +70,96 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
 
         jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 560, 100, 100));
+
+        Home.setBackground(new java.awt.Color(215, 82, 16));
+        Home.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Home.setForeground(new java.awt.Color(255, 255, 255));
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
+        Home.setText("HOME");
+        Home.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Home.setIconTextGap(-20);
+        Home.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 17, 430, 120));
+
+        View1.setBackground(new java.awt.Color(0, 0, 12));
+        View1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        View1.setForeground(new java.awt.Color(255, 255, 255));
+        View1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
+        View1.setText("VIEW");
+        View1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        View1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        View1.setIconTextGap(-20);
+        View1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        View1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        View1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                View1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 410, 120));
+
+        Add1.setBackground(new java.awt.Color(0, 0, 12));
+        Add1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Add1.setForeground(new java.awt.Color(255, 255, 255));
+        Add1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        Add1.setText("ADD");
+        Add1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Add1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Add1.setIconTextGap(-20);
+        Add1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Add1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Add1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Add1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 300, 410, 120));
+
+        Edit1.setBackground(new java.awt.Color(0, 0, 12));
+        Edit1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Edit1.setForeground(new java.awt.Color(255, 255, 255));
+        Edit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        Edit1.setText("EDIT");
+        Edit1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Edit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Edit1.setIconTextGap(-20);
+        Edit1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Edit1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Edit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Edit1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Edit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 430, 410, 120));
+
+        Print.setBackground(new java.awt.Color(0, 0, 12));
+        Print.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Print.setForeground(new java.awt.Color(255, 255, 255));
+        Print.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
+        Print.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Print.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Print.setIconTextGap(-20);
+        Print.setLabel(" REPORT GENARATION");
+        Print.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Print.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Print.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PrintMouseClicked(evt);
+            }
+        });
+        Print.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Print, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, 410, 120));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/visiting lecturer management rg.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
@@ -160,28 +184,55 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jLabel5MouseClicked
 
-    private void addLecturerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addLecturerMouseClicked
+        Home h = new Home();
+
+        h.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_HomeMouseClicked
+
+    private void View1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View1MouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturer v = new visitingLecturer();
+        v.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_View1MouseClicked
+
+    private void Add1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Add1MouseClicked
         // TODO add your handling code here:
 
         visitingLecturerAdd v = new visitingLecturerAdd();
-
-        this.setVisible(false);
         v.setVisible(true);
+        this.setVisible(false);
 
-    }//GEN-LAST:event_addLecturerMouseClicked
+    }//GEN-LAST:event_Add1MouseClicked
 
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+    private void Edit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Edit1MouseClicked
         // TODO add your handling code here:
 
         visitingLecturerEditUI v = new visitingLecturerEditUI();
         v.setVisible(true);
         this.setVisible(false);
 
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }//GEN-LAST:event_Edit1MouseClicked
+
+    private void PrintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrintMouseClicked
+        // TODO add your handling code here:
+
+        visitingLecturerReportgen v = new visitingLecturerReportgen();
+        v.setVisible(true);
+        this.setVisible(false);
+
+    }//GEN-LAST:event_PrintMouseClicked
+
+    private void PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrintActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,21 +270,16 @@ public class visitingLecturerReportgen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel addLecturer;
+    private javax.swing.JButton Add1;
+    private javax.swing.JButton Edit1;
+    private javax.swing.JButton Home;
+    private javax.swing.JButton Print;
+    private javax.swing.JButton View1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;

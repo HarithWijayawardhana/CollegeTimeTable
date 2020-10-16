@@ -7,6 +7,7 @@ package TimeTableUI;
 
 
 import java.awt.Color;
+import java.awt.Toolkit;
 
 /**
  *
@@ -19,6 +20,9 @@ public class Home extends javax.swing.JFrame {
      */
     public Home() {
         initComponents();
+        
+        setIconImage();
+        
     }
 
     /**
@@ -262,4 +266,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton lec;
     private javax.swing.JButton vlec;
     // End of variables declaration//GEN-END:variables
+
+    private void setIconImage() {
+        setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("home_50px.png")));
+    }
 }

@@ -49,6 +49,9 @@ public class AdminHome extends javax.swing.JFrame {
         jButton1.setBackground(new java.awt.Color(0, 0, 12));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer_1.png"))); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton1MouseEntered(evt);
             }
@@ -285,6 +288,15 @@ public class AdminHome extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        
+        LecturerView l = new LecturerView();
+        l.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
