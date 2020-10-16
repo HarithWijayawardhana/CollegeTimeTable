@@ -64,7 +64,7 @@ public class AdminHome extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 250, 240, 290));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 240, 290));
 
         jButton2.setBackground(new java.awt.Color(0, 0, 12));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/vlec.png"))); // NOI18N
@@ -87,11 +87,14 @@ public class AdminHome extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 250, 240, 290));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 250, 240, 290));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 12));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lechall.png"))); // NOI18N
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jButton3MouseEntered(evt);
             }
@@ -107,7 +110,7 @@ public class AdminHome extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 250, 240, 290));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 250, 240, 290));
 
         jButton4.setBackground(new java.awt.Color(0, 0, 12));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/timetbe.png"))); // NOI18N
@@ -127,7 +130,7 @@ public class AdminHome extends javax.swing.JFrame {
                 jButton4ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 240, 290));
+        jPanel1.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 240, 290));
 
         jButton5.setBackground(new java.awt.Color(0, 0, 12));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/back_to_50px.png"))); // NOI18N
@@ -285,6 +288,14 @@ public class AdminHome extends javax.swing.JFrame {
         this.setVisible(false);
         
     }//GEN-LAST:event_jButton5MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        // TODO add your handling code here:
+        lecturerhallmanagementview adminhometolechall = new lecturerhallmanagementview();
+        adminhometolechall.setVisible(true);
+        this.setVisible(false);
+        
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments

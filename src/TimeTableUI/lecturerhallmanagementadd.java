@@ -34,16 +34,6 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         hallId1 = new javax.swing.JTextField();
@@ -51,6 +41,11 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         capacity1 = new javax.swing.JTextField();
         building1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
+        View1 = new javax.swing.JButton();
+        Add1 = new javax.swing.JButton();
+        Edit1 = new javax.swing.JButton();
+        Print = new javax.swing.JButton();
+        Home = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -58,73 +53,6 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         jPanel1.setMinimumSize(new java.awt.Dimension(1200, 700));
         jPanel1.setPreferredSize(new java.awt.Dimension(1151, 609));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 100, 60));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 430, 80, 60));
-
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 570, 80, 60));
-
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
-        jLabel10.setText("jLabel10");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, 100, 60));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel11.setText("                           VIEW");
-        jLabel11.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel11.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel11MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 390, 90));
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 170, 100, 70));
-
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setText("              REPORT GENERATION");
-        jLabel6.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 570, 390, 90));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setText("                         HOME");
-        jLabel7.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 430, 100));
-
-        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("                          INSERT");
-        jLabel8.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel8MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 310, 390, 90));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("                            EDIT");
-        jLabel9.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
-            }
-        });
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 390, 80));
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 1, 20)); // NOI18N
         jLabel12.setForeground(new java.awt.Color(255, 255, 255));
@@ -180,6 +108,91 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 10, 60, 60));
 
+        View1.setBackground(new java.awt.Color(0, 0, 12));
+        View1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        View1.setForeground(new java.awt.Color(255, 255, 255));
+        View1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/view_1.png"))); // NOI18N
+        View1.setText("LECTURE HALL VIEW");
+        View1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        View1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        View1.setIconTextGap(-20);
+        View1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        View1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        View1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                View1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(View1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 163, 410, 120));
+
+        Add1.setBackground(new java.awt.Color(0, 0, 12));
+        Add1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Add1.setForeground(new java.awt.Color(255, 255, 255));
+        Add1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/add.png"))); // NOI18N
+        Add1.setText("LECTURE HALL ADD");
+        Add1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Add1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Add1.setIconTextGap(-20);
+        Add1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Add1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel1.add(Add1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 293, 410, 120));
+
+        Edit1.setBackground(new java.awt.Color(0, 0, 12));
+        Edit1.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Edit1.setForeground(new java.awt.Color(255, 255, 255));
+        Edit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/edit.png"))); // NOI18N
+        Edit1.setText("LECTURE HALL EDIT");
+        Edit1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Edit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Edit1.setIconTextGap(-20);
+        Edit1.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Edit1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Edit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Edit1MouseClicked(evt);
+            }
+        });
+        jPanel1.add(Edit1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 423, 410, 120));
+
+        Print.setBackground(new java.awt.Color(0, 0, 12));
+        Print.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Print.setForeground(new java.awt.Color(255, 255, 255));
+        Print.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/print.png"))); // NOI18N
+        Print.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Print.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Print.setIconTextGap(-20);
+        Print.setLabel(" REPORT GENARATION");
+        Print.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Print.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Print.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PrintMouseClicked(evt);
+            }
+        });
+        Print.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PrintActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Print, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 553, 410, 120));
+
+        Home.setBackground(new java.awt.Color(215, 82, 16));
+        Home.setFont(new java.awt.Font("Tahoma", 1, 22)); // NOI18N
+        Home.setForeground(new java.awt.Color(255, 255, 255));
+        Home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/home.png"))); // NOI18N
+        Home.setText("HOME");
+        Home.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        Home.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        Home.setIconTextGap(-20);
+        Home.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        Home.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        Home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HomeMouseClicked(evt);
+            }
+        });
+        jPanel1.add(Home, new org.netbeans.lib.awtextra.AbsoluteConstraints(9, 17, 430, 120));
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/lecturer hall management ADD.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 700));
 
@@ -201,7 +214,7 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         // TODO add your handling code here:
           try{
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/collegetimetable?" + "user=root&password=Kushan@321");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/collegetimetable?" + "user=root&password=Kushan@321");
 
             String sql = "insert into lecturerhallmanagement values(?, ?, ?, ?)";
             PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -231,37 +244,6 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
         capacity1.setText("");
     }//GEN-LAST:event_jLabel12MouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        // TODO add your handling code here:
-        lecturerhallmanagementview view = new lecturerhallmanagementview();
-        view.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel8MouseClicked
-
-    private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
-        // TODO add your handling code here:
-        lecturerhallmanagementview view = new lecturerhallmanagementview();
-        view.setVisible(true);
-        this.setVisible(false);
-
-
-
-    }//GEN-LAST:event_jLabel11MouseClicked
-
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        // TODO add your handling code here:
-        lecturermanagementupdate addupdate = new lecturermanagementupdate();
-        addupdate.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel9MouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-        // TODO add your handling code here:
-          lecturermanagementreportgen viewrg = new lecturermanagementreportgen();
-        viewrg.setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_jLabel6MouseClicked
-
     private void hallId1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hallId1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_hallId1ActionPerformed
@@ -281,6 +263,39 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
 
         jButton1.setBackground(new Color(255,255,255));
     }//GEN-LAST:event_jButton1MouseExited
+
+    private void View1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_View1MouseClicked
+        // TODO add your handling code here:
+        lecturerhallmanagementview addtoview = new lecturerhallmanagementview();
+        addtoview.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_View1MouseClicked
+
+    private void Edit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Edit1MouseClicked
+        // TODO add your handling code here:
+
+        lecturermanagementupdate addtoupdate = new lecturermanagementupdate();
+        addtoupdate.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_Edit1MouseClicked
+
+    private void PrintMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PrintMouseClicked
+        // TODO add your handling code here:
+        lecturermanagementreportgen addtorg = new lecturermanagementreportgen();
+        addtorg.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_PrintMouseClicked
+
+    private void PrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrintActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PrintActionPerformed
+
+    private void HomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HomeMouseClicked
+        // TODO add your handling code here:
+         Home hm = new Home();
+        hm.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_HomeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -321,24 +336,19 @@ public class lecturerhallmanagementadd extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Add1;
+    private javax.swing.JButton Edit1;
+    private javax.swing.JButton Home;
+    private javax.swing.JButton Print;
+    private javax.swing.JButton View1;
     private javax.swing.JComboBox<String> building1;
     private javax.swing.JTextField capacity1;
     private javax.swing.JTextField hallId1;
     private javax.swing.JTextField hallName1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
